@@ -1,0 +1,553 @@
+$lightYellow: #cdbe91;
+
+@font-face {
+    font-family: friz-regular;
+    src: url(../fonts/Friz-Quadrata-Regular.ttf);
+}
+
+@font-face {
+    font-family: friz-bold;
+    src: url(../fonts/Friz-Quadrata-Bold.otf);
+}
+
+@mixin flexCenter($direction, $justify) {
+
+    display: flex;
+    justify-content: $justify;
+    align-items: center;
+    flex-direction: $direction;
+} 
+ 
+ * {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ }
+
+ ::selection {
+
+    color: #000;
+    background: #cdbe91;
+ }
+
+ body {
+
+    position: relative;
+    height: 100vh;
+    font-family: 'Rubik', sans-serif;
+
+    header {
+
+        position: fixed;
+        width: 100%;
+        backdrop-filter: blur(8px);
+        z-index: 10000000;
+        padding: 1rem 10rem;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .socialMedia {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+
+            a {
+
+                padding: 0.9rem;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                border: 1px solid $lightYellow;
+                text-decoration: none;
+                color: $lightYellow;
+                position: relative;
+
+                i {
+
+                    font-size: 1.25rem;
+                }
+            }
+            
+            a:hover {
+
+                color: #000;
+            }
+
+            a::after {
+
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                background: $lightYellow;
+                transform: translate(-50%, -50%) scale(0);
+                z-index: -1;
+                transition: all 0.3s ease;
+            }
+
+            a:hover:after {
+
+                transform: translate(-50%, -50%) scale(1);
+            }
+
+            a:first-child {
+
+                padding: 0.9rem 0.9rem 1rem 1.1rem;
+            }
+        }
+
+        .languageButtons {
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+
+            button {
+
+                cursor: pointer;
+                background: transparent;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                border: 1px solid $lightYellow;
+                text-decoration: none;
+                color: $lightYellow;
+                position: relative;
+            }
+
+            button::after {
+
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                background: $lightYellow;
+                transform: translate(-50%, -50%) scale(0);
+                z-index: -1;
+                transition: all 0.3s ease;
+            }
+
+            button:hover {
+
+                color: #000;
+            }
+
+            button:hover:after {
+
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+    }
+
+    .container {
+
+        @include flexCenter(column, center);
+
+        gap: 0.5rem;
+        position: absolute;
+        left: 50%;
+        top: 22%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+
+        h1 {
+
+            font-family: friz-regular;
+            letter-spacing: 4px;
+            font-size: 3rem;
+            color: #cdbe91;
+            text-transform: uppercase;
+            text-shadow: 0px 10px 10px rgba(28, 28, 28, 0.446);
+        }
+
+        #lead {
+
+            font-size: 1.5rem;
+            font-family: friz-regular;
+            text-transform: uppercase;
+            letter-spacing: 10px;
+            color: #cdbe91;
+            text-shadow: 0px 10px 10px rgba(28, 28, 28, 0.446);
+            margin-bottom: 2rem;
+        }
+
+        p {
+
+            color: rgb(255, 252, 238);
+            text-shadow: 0px 10px 10px rgba(28, 28, 28, 0.446);
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+
+        }
+
+        input {
+
+            font-family: friz-regular;
+            font-size: 1.1rem;
+            padding: 1rem 2rem;
+            border-radius: 20px;
+            letter-spacing: 1px;
+            width: auto;
+            outline: none;
+            border: none;
+            background: rgba(0, 0, 0, 0.377);
+            color: $lightYellow;
+            border: 1px solid $lightYellow;
+            box-shadow: 0px 10px 20px rgba(28, 28, 28, 0.2);
+
+        }
+
+        input::placeholder {
+
+            font-family: 'Poppins', sans-serif;
+            color: $lightYellow;
+        }
+
+        button {
+
+            min-width: 300px;
+            font-family: inherit;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 1rem;
+            appearance: none;
+            padding: 1rem 1.5rem;
+            background: rgb(121, 121, 231);
+            color: #fff;
+            font-weight: 600;
+            outline: none;
+            border: none;
+            border-radius: 20px;
+
+            cursor: pointer;
+
+        }
+    }
+
+    .imgHeader {
+
+        position: relative;
+        margin: 2rem 0;
+        top: 30%;
+
+        .img-container {
+
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+            overflow: hidden;
+            z-index: 1;
+            border: 4px solid #cdbe91;
+    
+            img {
+    
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+    }
+
+    .imgHeader::after {
+
+        content: '';
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        height: 5px;
+        background: linear-gradient(to right, #cdbe9100, #cdbe91, #cdbe9100,);
+        z-index: -1;
+    }
+
+    .results {
+
+        position: absolute;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 69%;
+        font-family: inherit;
+        min-width: 1500px;
+        transition: all 0.3s ease;
+        z-index: 1;
+
+        .champResults {
+
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-gap: 1rem;
+            row-gap: 2rem;
+            height: 500px;
+
+            .flexItem {
+
+                grid-column: span 2;
+                padding-top: 0.8rem;
+
+                h2 {
+
+                    margin: 1.25rem 0;
+                }
+            }
+
+            .flexItem:last-child {
+
+                grid-column: 3 / span 2;
+            }
+
+            h2 {
+
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+    
+            div {
+    
+                background-color: rgba(0, 0, 0, 0.6);
+                color: #fff;
+                padding: 1.72rem;
+                border-radius: 10px;
+                font-size: 1rem;
+    
+                span {
+
+                    line-height: 25px;
+
+                }
+            }
+    
+            .header {
+    
+                @include flexCenter(column, center);
+
+                position: relative;
+                text-align: center;
+                padding: 1rem;
+                border-radius: 0px;
+                color: #cdbe91;
+
+                h1, h2 {
+
+                    font-family: friz-regular;
+                    letter-spacing: 1px;
+                }
+
+                h1 {
+
+                    font-size: 3rem;
+                }
+
+                h2 {
+
+                    font-size: 1.5rem;
+                    margin: 0.5rem 0;
+                }
+            }
+
+            .header::after {
+
+                content: '';
+                position: absolute;
+                top: 0;
+                width: 100%;
+                height: 5px;
+                background: linear-gradient(to right, #cdbe9100, #cdbe91, #cdbe9100,);
+            }
+
+            .header::before {
+
+                content: '';
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                height: 5px;
+                background: linear-gradient(to right, #cdbe9100, #cdbe91, #cdbe9100,);
+            }
+    
+            .role {
+
+                @include flexCenter(column, center);
+
+                font-size: 1rem;
+                border-radius: 20px 0px 0px 20px;
+                position: relative;
+                padding-bottom: 0;
+
+                .hpArmorCost {
+
+                    background: transparent;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+                    padding-top: 0;
+                    width: 100%;
+
+                    div {
+
+                        @include flexCenter(row, space-between);
+
+                        background: transparent;
+                        padding: 0;
+                    }
+
+                    span {
+
+                        @include flexCenter(row, space-between);
+
+                        text-align: left;
+                        gap: 1rem;
+                    }
+                    
+                    .insValue {
+    
+                        width: auto;
+                        font-size: 2rem;
+                        justify-content: right;
+                    }
+                }
+    
+                .roleName {
+    
+                    font-family: friz-regular;
+                    color: $lightYellow;
+                    letter-spacing: 1px;
+                    font-size: 2rem;
+                    font-weight: 700;
+                }
+            }
+
+            .role::after {
+
+                content: 'ROLE';
+                font-family: friz-regular;
+                border: 1px solid #fff;
+                text-align: center;
+                background: rgb(29, 29, 29);
+                border-radius: 10px;
+                font-size: 1.4rem;
+                position: absolute;
+                width: 125px;
+                padding: 0.6rem;
+                top: 0;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+    
+            .lore {
+
+                @include flexCenter(column, center);
+
+                text-align: center;
+                border-radius: 0px 20px 20px 0px;
+                position: relative;
+    
+                h4 {
+    
+                    font-size: 2rem;
+                    margin-bottom: 1rem;
+                }
+            }
+
+            .lore::after {
+
+                content: 'LORE';
+                font-family: friz-regular;
+                border: 1px solid ;
+                background: rgb(29, 29, 29);
+                border-radius: 10px;
+                font-size: 1.4rem;
+                position: absolute;
+                width: 125px;
+                padding: 0.6rem;
+                top: 0;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+    
+            .passive {
+
+                @include flexCenter(column, center);
+
+                text-align: center;
+                position: relative;
+                border-radius: 0px 0px 20px 20px;
+
+                h2 {
+
+                    font-family: friz-regular;
+                    letter-spacing: 1px;
+                    color: $lightYellow;
+                }
+    
+                .passiveName {
+    
+                    font-family: friz-regular;
+                    font-size: 2rem;
+                    line-height: 35px;
+                    margin-bottom: 10px;
+                    font-weight: 700;
+    
+                }
+            }
+
+            .passive::after {
+
+                content: 'PASSIVE';
+                font-family: friz-regular;
+                border: 1px solid ;
+                background: rgb(29, 29, 29);
+                border-radius: 10px;
+                font-size: 1.4rem;
+                position: absolute;
+                width: 125px;
+                padding: 0.6rem;
+                top: 0;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+    
+            .tips {
+
+                @include flexCenter(column, center);
+            }
+        }
+ 
+    }
+
+    .backgroundLayer {
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 120vh;
+        background:  linear-gradient(to top, rgba(0, 18, 37, 0.1), rgba(0, 11, 23, 0.9));
+        z-index: -49;
+    }
+
+    #backgroundImg {
+
+        position: absolute;
+        width: 100%;
+        height: 120vh;
+        object-fit: cover;
+        filter: grayscale(100%) opacity(0.5);
+        top: 0;
+        left: 0;
+        z-index: -50;
+    }
+ }
