@@ -1,0 +1,11 @@
+$lightYellow: #cdbe91;
+$mainBlue: #020b18;
+$darkColor: #0518346b;
+
+@mixin flexCenter($direction, $justify) {
+
+    display: flex;
+    justify-content: $justify;
+    align-items: center;
+    flex-direction: $direction;
+} 

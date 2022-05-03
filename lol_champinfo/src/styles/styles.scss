@@ -1,0 +1,60 @@
+/* importing other scss files */
+@import './scss_components/variables';
+@import './scss_components/header';
+@import './scss_components/mainContainer';
+@import './scss_components/champResults';
+@import './scss_components/allChampContainer';
+@import './scss_components/sortChampions';
+
+/* importing custom fonts */
+@font-face {
+    font-family: friz-regular;
+    src: url(../fonts/Friz-Quadrata-Regular.ttf);
+}
+@font-face {
+    font-family: friz-bold;
+    src: url(../fonts/Friz-Quadrata-Bold.otf);
+}
+
+/* global styling */
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: url(../img/cursor.png), auto;
+ }
+
+html {
+
+    scroll-behavior: smooth;
+}
+
+ button:hover,
+ a:hover,
+ input:hover
+ {
+
+    cursor: url(../img/cursor_hover.png), auto!important;
+ }
+
+ :focus {
+
+    border: none;
+    outline: none;
+    background: $lightYellow;
+    color: $darkColor;
+ }
+
+ ::selection {
+
+    color: $darkColor;
+    background: #cdbe91;
+ }
+
+ body {
+
+    position: relative;
+    font-family: 'Rubik', sans-serif;
+    background: $mainBlue;
+ }

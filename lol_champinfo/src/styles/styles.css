@@ -1,0 +1,1115 @@
+/* importing other scss files */
+header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+  z-index: 10000000;
+  padding: 1rem 10rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .socialMedia {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+}
+
+header .socialMedia a {
+  padding: 0.9rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #cdbe91;
+  text-decoration: none;
+  color: #cdbe91;
+  position: relative;
+}
+
+header .socialMedia a i {
+  font-size: 1.25rem;
+}
+
+header .socialMedia a:hover {
+  color: #000;
+}
+
+header .socialMedia a::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #cdbe91;
+  -webkit-transform: translate(-50%, -50%) scale(0);
+          transform: translate(-50%, -50%) scale(0);
+  z-index: -1;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+header .socialMedia a:hover:after {
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+}
+
+header .socialMedia a:first-child {
+  padding: 0.9rem 0.9rem 1rem 1.1rem;
+}
+
+header .languageButtons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+}
+
+header .languageButtons button {
+  cursor: pointer;
+  background: transparent;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #cdbe91;
+  text-decoration: none;
+  color: #cdbe91;
+  position: relative;
+}
+
+header .languageButtons button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #cdbe91;
+  -webkit-transform: translate(-50%, -50%) scale(0);
+          transform: translate(-50%, -50%) scale(0);
+  z-index: -1;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+header .languageButtons button:hover {
+  color: #000;
+}
+
+header .languageButtons button:hover:after {
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+}
+
+header .active {
+  background-color: #cdbe91 !important;
+  color: #000 !important;
+  position: relative;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+header .active::before {
+  content: '';
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  background: -webkit-gradient(linear, left top, right top, color-stop(20%, #0518346b), to(#50b6ff));
+  background: linear-gradient(to right, #0518346b 20%, #50b6ff);
+  -webkit-box-shadow: 10px 0px 20px rgba(80, 182, 255, 0.386);
+          box-shadow: 10px 0px 20px rgba(80, 182, 255, 0.386);
+  z-index: -1;
+  -webkit-animation: rotate 1.5s linear infinite;
+          animation: rotate 1.5s linear infinite;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: translate(-50%, -50%) rotate(0deg);
+            transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%) rotate(360deg);
+            transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: translate(-50%, -50%) rotate(0deg);
+            transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%) rotate(360deg);
+            transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.5rem;
+  z-index: 2;
+}
+
+.container h1, .container #lead, .container p {
+  pointer-events: none;
+}
+
+.container h1 {
+  font-family: friz-regular;
+  letter-spacing: 4px;
+  font-size: 3rem;
+  color: #cdbe91;
+  text-transform: uppercase;
+  text-shadow: 0px 10px 10px #0518346b;
+}
+
+.container #lead {
+  font-size: 1.5rem;
+  font-family: friz-regular;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  color: #cdbe91;
+  text-shadow: 0px 10px 10px #0518346b;
+  margin-bottom: 2rem;
+}
+
+.container p {
+  color: #fffcee;
+  text-shadow: 0px 10px 10px #0518346b;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.container .inputContainer {
+  position: relative;
+}
+
+.container .inputContainer input {
+  font-size: 1.1rem;
+  padding: 1rem 2rem;
+  border-radius: 20px;
+  letter-spacing: 1px;
+  width: 325px;
+  max-width: 325px;
+  outline: none;
+  border: none;
+  background: #0518346b;
+  color: #cdbe91;
+  border: 1px solid #cdbe91;
+  -webkit-box-shadow: 0px 0px 20px #0518346b;
+          box-shadow: 0px 0px 20px #0518346b;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.container .inputContainer input:hover {
+  background: #0518346b;
+  -webkit-box-shadow: 0px 0px 10px #cdbe91;
+          box-shadow: 0px 0px 10px #cdbe91;
+}
+
+.container .inputContainer input::-webkit-input-placeholder {
+  font-family: 'Poppins', sans-serif;
+  color: #cdbe91;
+}
+
+.container .inputContainer input:-ms-input-placeholder {
+  font-family: 'Poppins', sans-serif;
+  color: #cdbe91;
+}
+
+.container .inputContainer input::-ms-input-placeholder {
+  font-family: 'Poppins', sans-serif;
+  color: #cdbe91;
+}
+
+.container .inputContainer input::placeholder {
+  font-family: 'Poppins', sans-serif;
+  color: #cdbe91;
+}
+
+.container .inputContainer #reset {
+  position: absolute;
+  width: 50px;
+  height: 100%;
+  top: 0;
+  right: 0;
+  border-radius: 0px 20px 20px 0px;
+  background: transparent;
+  border: 1px solid #cdbe91;
+  color: #cdbe91;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  overflow: hidden;
+}
+
+.container .inputContainer #reset i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.container .inputContainer #reset::after {
+  content: '';
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) scale(0);
+          transform: translate(-50%, -50%) scale(0);
+  border-radius: 50%;
+  background: #cdbe91;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.container .inputContainer #reset:hover {
+  color: #000;
+}
+
+.container .inputContainer #reset:hover:after {
+  z-index: 0;
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+}
+
+.container button {
+  font-family: inherit;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  padding: 1rem 1.5rem;
+  background: #7979e7;
+  color: #fff;
+  font-weight: 600;
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.results {
+  padding: 0 5rem 5rem 5rem;
+  font-family: inherit;
+  min-width: 1500px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.results .imgHeader {
+  position: relative;
+  margin: 2rem 0;
+}
+
+.results .imgHeader .img-container {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  overflow: hidden;
+  z-index: 1;
+  border: 4px solid #cdbe91;
+}
+
+.results .imgHeader .img-container img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.results .imgHeader::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 5px;
+  background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(#cdbe91), to(transparent));
+  background: linear-gradient(to right, transparent, #cdbe91, transparent);
+  z-index: -1;
+}
+
+.results .imgHeader::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 110px;
+  height: 110px;
+  -webkit-animation: rotate 2s linear infinite;
+          animation: rotate 2s linear infinite;
+  border-radius: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: -webkit-gradient(linear, left top, right top, from(#0518346b), color-stop(#cdbe91), to(#0518346b));
+  background: linear-gradient(to right, #0518346b, #cdbe91, #0518346b);
+  -webkit-box-shadow: 0px 5px 10px #cdbe91;
+          box-shadow: 0px 5px 10px #cdbe91;
+  z-index: -1;
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: translate(-50%, -50%) rotate(0deg);
+            transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%) rotate(360deg);
+            transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.results .champResults {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[6];
+      grid-template-columns: repeat(6, 1fr);
+  grid-gap: 1rem;
+  row-gap: 2rem;
+}
+
+.results .champResults .flexItem {
+  padding: 1.72rem;
+  grid-column: span 2;
+}
+
+.results .champResults .flexItem h2 {
+  margin: 1.25rem 0;
+}
+
+.results .champResults .flexItem .flexItemName {
+  content: 'ROLE';
+  font-family: friz-regular;
+  border: 1px solid #fff;
+  text-align: center;
+  background: #020b18;
+  border-radius: 10px;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  position: absolute;
+  width: auto;
+  padding: 0.5rem 1rem;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.results .champResults .flexItem:last-child {
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 4;
+  grid-column: 3 / span 4;
+}
+
+.results .champResults .flexItem:nth-child(3n) {
+  border-radius: 0px 20px 0px 0px;
+}
+
+.results .champResults .flexItem:nth-child(4n) {
+  border-radius: 0px 0px 0px 20px;
+}
+
+.results .champResults h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.results .champResults div {
+  background-color: #0518346b;
+  color: #fff;
+  padding: 1.72rem;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+.results .champResults div span {
+  line-height: 25px;
+}
+
+.results .champResults .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 0px;
+  color: #cdbe91;
+}
+
+.results .champResults .header h1, .results .champResults .header h2 {
+  font-family: friz-regular;
+  letter-spacing: 1px;
+}
+
+.results .champResults .header h1 {
+  font-size: 3rem;
+}
+
+.results .champResults .header h2 {
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+.results .champResults .header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 5px;
+  background: -webkit-gradient(linear, left top, right top, from(#0518346b), color-stop(#cdbe91), to(#0518346b));
+  background: linear-gradient(to right, #0518346b, #cdbe91, #0518346b);
+}
+
+.results .champResults .header::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 5px;
+  background: -webkit-gradient(linear, left top, right top, from(#0518346b), color-stop(#cdbe91), to(#0518346b));
+  background: linear-gradient(to right, #0518346b, #cdbe91, #0518346b);
+}
+
+.results .champResults .role {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 1rem;
+  border-radius: 20px 0px 0px 0px;
+  position: relative;
+}
+
+.results .champResults .role .hpArmorCost {
+  background: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1rem;
+  padding-top: 0;
+  width: 100%;
+}
+
+.results .champResults .role .hpArmorCost div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background: transparent;
+  padding: 0;
+}
+
+.results .champResults .role .hpArmorCost span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  text-align: left;
+  gap: 1rem;
+}
+
+.results .champResults .role .hpArmorCost .insValue {
+  width: auto;
+  font-size: 2rem;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+}
+
+.results .champResults .role .roleName {
+  font-family: friz-regular;
+  color: #cdbe91;
+  letter-spacing: 1px;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.results .champResults .lore {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  border-radius: 0px 20px 0px 0px;
+  position: relative;
+}
+
+.results .champResults .lore h4 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.results .champResults .passive {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  position: relative;
+  border-radius: 0px 0px 0px 20px;
+}
+
+.results .champResults .passive h2 {
+  font-family: friz-regular;
+  letter-spacing: 1px;
+  color: #cdbe91;
+  margin-top: 0px;
+  margin-bottom: 1rem;
+}
+
+.results .champResults .passive .passiveName {
+  font-family: friz-regular;
+  font-size: 2rem;
+  line-height: 35px;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.results .champResults .skills {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 1rem;
+  position: relative;
+  border-radius: 0px 0px 20px 0px;
+  display: -ms-grid;
+  display: grid;
+  align-items: center;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 1fr;
+  padding-top: 2.5rem;
+  grid-gap: 2rem;
+}
+
+.results .champResults .skills .skillItem {
+  background: none;
+  grid-column: span 1;
+  height: 100%;
+  position: relative;
+  border-top: 1px solid #cdbe91;
+  border-left: 1px solid #cdbe91;
+  border-radius: 0px;
+}
+
+.results .champResults .skills .skillItem .skillShortkey {
+  right: 0px;
+  top: 15px;
+  background: none;
+  font-size: 1.25rem;
+  width: 50px;
+  height: 50px;
+  padding: 0.76rem 1.04rem;
+  border: 1px solid #cdbe91;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.results .champResults .skills .skillItem .skillName {
+  font-family: friz-regular;
+  color: #cdbe91;
+  letter-spacing: 1px;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  max-width: 90%;
+}
+
+.results .champResults .skills .skillItem .skillDesc {
+  line-height: 25px;
+  margin-bottom: 1rem;
+}
+
+.results .champResults .skills .skillItem .skillCost {
+  line-height: 25px;
+}
+
+.champContentContainer {
+  margin-top: 2rem;
+  width: 100%;
+  padding: 0 5rem 5rem 5rem;
+  z-index: 100;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1rem;
+}
+
+.champContentContainer .latestChampionContainer {
+  width: 50%;
+}
+
+.champContentContainer .latestChampionContainer .latestChampionHeader {
+  padding: 1rem 0;
+  width: 100%;
+  font-weight: 400;
+  color: #cdbe91;
+  background: #fff;
+  letter-spacing: 0px;
+  text-align: center;
+  border: 1px solid #cdbe91;
+  border-bottom: none;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  background: #0518346b;
+}
+
+.champContentContainer .latestChampionContainer .latestChampion {
+  background-size: 100% !important;
+  background-repeat: no-repeat !important;
+  background-position: topw !important;
+  font-family: friz-regular;
+  font-size: 2rem !important;
+  color: #fff !important;
+  position: relative;
+  overflow: hidden;
+  height: 350px;
+  width: 100%;
+  outline: none;
+  text-align: left;
+  border: 1px solid #cdbe91;
+  -webkit-transition: all 0.2s ease !important;
+  transition: all 0.2s ease !important;
+  padding: 6rem;
+}
+
+.champContentContainer .latestChampionContainer .latestChampion h4, .champContentContainer .latestChampionContainer .latestChampion p {
+  pointer-events: none;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+}
+
+.champContentContainer .latestChampionContainer .latestChampion h4 {
+  font-size: 3rem;
+  color: #cdbe91;
+}
+
+.champContentContainer .latestChampionContainer .latestChampion .latestChampionBackgroundLayer {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.458);
+  opacity: 0.5;
+  z-index: 0;
+  pointer-events: none;
+  -webkit-transition: all 0.2s ease !important;
+  transition: all 0.2s ease !important;
+}
+
+.champContentContainer .latestChampionContainer .latestChampion:hover .latestChampionBackgroundLayer {
+  background: transparent;
+}
+
+.champContentContainer .latestChampionContainer .latestChampion:hover:after {
+  -webkit-transform: translate(-50%, -50%) scale(2);
+          transform: translate(-50%, -50%) scale(2);
+}
+
+.champContentContainer .latestChampionContainer .latestChampion::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 10px;
+  height: 100%;
+  background: #cdbe91;
+  -webkit-box-shadow: 0px 0px 20px #fff;
+          box-shadow: 0px 0px 20px #fff;
+  -webkit-transform: skew(-45deg) translateX(-2000px);
+          transform: skew(-45deg) translateX(-2000px);
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+  -webkit-animation: shine 5s infinite;
+          animation: shine 5s infinite;
+}
+
+@-webkit-keyframes shine {
+  0% {
+    -webkit-transform: skew(-45deg) translateX(-2000px);
+            transform: skew(-45deg) translateX(-2000px);
+  }
+  50%, 100% {
+    -webkit-transform: skew(-45deg) translateX(2000px);
+            transform: skew(-45deg) translateX(2000px);
+  }
+}
+
+@keyframes shine {
+  0% {
+    -webkit-transform: skew(-45deg) translateX(-2000px);
+            transform: skew(-45deg) translateX(-2000px);
+  }
+  50%, 100% {
+    -webkit-transform: skew(-45deg) translateX(2000px);
+            transform: skew(-45deg) translateX(2000px);
+  }
+}
+
+.champContentContainer .allChampionContainer {
+  border-top: 1px solid #cdbe91;
+  margin-top: 1rem;
+  padding-top: 2rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  width: 100%;
+}
+
+.champContentContainer .allChampionContainer a {
+  position: relative;
+  /* had to overwrite MonkeyKing content since its Wukong not MonkeyKing... api is bad */
+}
+
+.champContentContainer .allChampionContainer a #MonkeyKing .oneChampHeader::after {
+  content: 'Wukong';
+  position: absolute;
+  bottom: 35%;
+  left: 0;
+}
+
+.champContentContainer .allChampionContainer a #MonkeyKing .oneChampName {
+  opacity: 0;
+}
+
+.champContentContainer .allChampionContainer a .oneChampButton {
+  position: relative;
+  width: 100%;
+  font-family: friz-regular;
+  font-size: 1.75rem;
+  background-size: 110% !important;
+  background-repeat: no-repeat !important;
+  background-position: center;
+  padding: 5rem 3rem;
+  text-align: left;
+  color: #cdbe91;
+  text-shadow: 0px 0px 0px black;
+  outline: none;
+  border: 1px solid #cdbe91;
+  cursor: pointer;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  background: #0518346b;
+  overflow: hidden;
+}
+
+.champContentContainer .allChampionContainer a .oneChampButton span {
+  width: 100%;
+  padding: 1rem 0rem;
+}
+
+.champContentContainer .allChampionContainer a .oneChampButton .oneChampHeader {
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+.champContentContainer .allChampionContainer a .oneChampButton .oneChampHeader .oneChampTitle {
+  font-family: 'Rubik', sans-serif;
+  font-size: 1rem;
+  color: #fff;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+.champContentContainer .allChampionContainer a .oneChampButton::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #cdbe91;
+  opacity: .75;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  z-index: -1;
+}
+
+.champContentContainer .allChampionContainer a .oneChampButton:hover {
+  color: #000;
+  text-shadow: none;
+  background: transparent;
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+  -webkit-box-shadow: 0px 10px 15px #0518346b;
+          box-shadow: 0px 10px 15px #0518346b;
+}
+
+.champContentContainer .allChampionContainer a .oneChampButton:hover .oneChampButtonShadow {
+  opacity: 0;
+}
+
+.champContentContainer .allChampionContainer a .oneChampButton:hover .oneChampHeader .oneChampTitle {
+  color: #000;
+}
+
+.champContentContainer .allChampionContainer a .oneChampButton:hover:after {
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+}
+
+.champContentContainer .allChampionContainer a .oneChampButtonShadow {
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: -webkit-gradient(linear, left bottom, left top, from(#000), to(transparent));
+  background: linear-gradient(to top, #000, transparent);
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.champContentContainer .allChampionContainer a .oneChampHeader {
+  position: absolute;
+  bottom: 20%;
+  left: 10%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.sortAllChampionsContainer {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  gap: 1rem;
+  -ms-grid-columns: (minmax(calc(16.6666666667% - 1rem), 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(calc(16.6666666667% - 1rem), 1fr));
+}
+
+.sortAllChampionsContainer a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: relative;
+  gap: 1rem;
+  width: 100%;
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 1rem 0;
+  background: #cdbe91;
+  color: #000;
+  border: none;
+  text-decoration: none;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+.sortAllChampionsContainer a:hover {
+  background: #000;
+  color: #cdbe91;
+}
+
+.sortAllChampionsContainer a .sortAllChampsButtonImageContainer {
+  height: 20px;
+  width: 20px;
+}
+
+.sortAllChampionsContainer a .sortAllChampsButtonImageContainer img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/* importing custom fonts */
+@font-face {
+  font-family: friz-regular;
+  src: url(../fonts/Friz-Quadrata-Regular.ttf);
+}
+
+@font-face {
+  font-family: friz-bold;
+  src: url(../fonts/Friz-Quadrata-Bold.otf);
+}
+
+/* global styling */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  cursor: url(../img/cursor.png), auto;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+button:hover,
+a:hover,
+input:hover {
+  cursor: url(../img/cursor_hover.png), auto !important;
+}
+
+:focus {
+  border: none;
+  outline: none;
+  background: #cdbe91;
+  color: #0518346b;
+}
+
+::-moz-selection {
+  color: #0518346b;
+  background: #cdbe91;
+}
+
+::selection {
+  color: #0518346b;
+  background: #cdbe91;
+}
+
+body {
+  position: relative;
+  font-family: 'Rubik', sans-serif;
+  background: #020b18;
+}
+/*# sourceMappingURL=styles.css.map */
