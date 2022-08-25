@@ -17,25 +17,37 @@ const App = () => {
   //selecting input field
   let champInput = document.querySelector('#input');
 
+<<<<<<< HEAD:src/App.js
   //for main data
   const [oneChampData, setOneChampData] = useState([]);
   const [allChampData, setAllChampData] = useState([]);
 
   //for latest champion
+=======
+  const [oneChampData, setOneChampData] = useState([]);
+  const [allChampData, setAllChampData] = useState([]);
+
+>>>>>>> d676963 (adding noticebox component to app with styles):lol_champinfo/src/App.js
   const [latestChampName, setLatestChampName] = useState([]);
   const [latestChampTitle, setLatestChampTitle] = useState([]);
   const [latestChampImage, setLatestChampImage] = useState('');
 
+<<<<<<< HEAD:src/App.js
   //for rendering unique sortbuttons
   const [uniqueRoles, setUniqueRoles] = useState([]);
 
   //for rendering data of one champion when writing proper champion name, or clicking on a container of champion below sort buttons
+=======
+  const [uniqueRoles, setUniqueRoles] = useState([]);
+
+>>>>>>> d676963 (adding noticebox component to app with styles):lol_champinfo/src/App.js
   const [championImg, setChampionImg] = useState('');
   const [oneChampionDisplay, setOneChampionDisplay] = useState(false);
   const [allChampionDisplay, setAllChampionDisplay] = useState(true);
   const [languageButtonActiveClass, setActiveClass] = useState('2');
   const [sortButtonActiveClass, setSortButtonActiveClass] = useState('0');
 
+<<<<<<< HEAD:src/App.js
   //for displaying error below input field
   const [inputErrorDisplay, setInputErrorDisplay] = useState(false);
 
@@ -47,11 +59,23 @@ const App = () => {
   const [lever, setLever] = useState(false);
 
   //for language of api / version of api / actual sitetext for application stored in external js file 
+=======
+  const [inputErrorDisplay, setInputErrorDisplay] = useState(false);
+
+  const [loaderDisplay, setLoaderDisplay] = useState(false);
+  const [loaderBgImgIndex, setLoaderBgImgIndex] = useState(0);
+
+  const [lever, setLever] = useState(false);
+
+>>>>>>> d676963 (adding noticebox component to app with styles):lol_champinfo/src/App.js
   const [siteText, setSiteText] = useState(EnglishSiteText);
   const [version, setVersion] = useState('');
   const [language, setLanguage] = useState(SiteLanguages.eng);
 
+<<<<<<< HEAD:src/App.js
   //for assembling-team function when all lanes are filled with one champion (you cannot choose the same champion twice)
+=======
+>>>>>>> d676963 (adding noticebox component to app with styles):lol_champinfo/src/App.js
   const [champCompInfoText, setChampionCompRolesText] = useState(siteText.champCompDefaultText);
   const [championCompRolesColor, setChampionCompRolesColor] = useState('');
   const [championCompRolesIcon, setChampionCompRolesIcon] = useState("fa-solid fa-down-long");
@@ -77,9 +101,13 @@ const App = () => {
   return (
     <>
       {/* Tiny notice when window is loaded */}
+<<<<<<< HEAD:src/App.js
       <DocNotice
 
       />
+=======
+      <DocNotice />
+>>>>>>> d676963 (adding noticebox component to app with styles):lol_champinfo/src/App.js
 
       {/* Language Loader */}
       <LanguageLoader
