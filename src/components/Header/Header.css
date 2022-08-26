@@ -1,0 +1,353 @@
+@font-face {
+  src: url(../assets/fonts/Friz-Quadrata-Regular.ttf);
+  font-family: friz-regular;
+}
+
+header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+  z-index: 10000000;
+  padding: 1rem 10rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header #headerSVG {
+  height: 50px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 2;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+header .hamburger {
+  display: none;
+}
+
+header .socialMedia {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+}
+
+header .socialMedia a {
+  padding: 0.9rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #cdbe91;
+  text-decoration: none;
+  color: #cdbe91;
+  position: relative;
+}
+
+header .socialMedia a i {
+  font-size: 1.25rem;
+}
+
+header .socialMedia a:hover {
+  color: #000;
+}
+
+header .socialMedia a::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #cdbe91;
+  -webkit-transform: translate(-50%, -50%) scale(0);
+          transform: translate(-50%, -50%) scale(0);
+  z-index: -1;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+header .socialMedia a:hover:after {
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+}
+
+header .socialMedia a:first-child {
+  padding: 0.9rem 0.9rem 1rem 1.1rem;
+}
+
+header .languageButtons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+}
+
+header .languageButtons button {
+  cursor: pointer;
+  background: transparent;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #cdbe91;
+  text-decoration: none;
+  color: #cdbe91;
+  position: relative;
+}
+
+header .languageButtons button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #cdbe91;
+  -webkit-transform: translate(-50%, -50%) scale(0);
+          transform: translate(-50%, -50%) scale(0);
+  z-index: -1;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+header .languageButtons button:hover {
+  color: #000;
+}
+
+header .languageButtons button:hover:after {
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+}
+
+header .active {
+  background-color: #cdbe91 !important;
+  color: #000 !important;
+  position: relative;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+header .active::before {
+  content: '';
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  background: -webkit-gradient(linear, left top, right top, color-stop(20%, #0518346b), to(#50b6ff));
+  background: linear-gradient(to right, #0518346b 20%, #50b6ff);
+  -webkit-box-shadow: 10px 0px 20px rgba(80, 182, 255, 0.386);
+          box-shadow: 10px 0px 20px rgba(80, 182, 255, 0.386);
+  z-index: -1;
+  -webkit-animation: rotate 1.5s linear infinite;
+          animation: rotate 1.5s linear infinite;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: translate(-50%, -50%) rotate(0deg);
+            transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%) rotate(360deg);
+            transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: translate(-50%, -50%) rotate(0deg);
+            transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%) rotate(360deg);
+            transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.hamburgerSocialMedia {
+  display: none;
+}
+
+@media screen and (max-width: 1300px) {
+  header {
+    padding: 1rem 5rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  header {
+    padding: 1rem 2rem;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  header {
+    padding: 1rem 1rem;
+  }
+  header .socialMedia a {
+    width: 40px;
+    height: 40px;
+    padding: .65rem .5rem .75rem .7rem;
+  }
+  header .socialMedia a:first-child {
+    padding: .65rem .5rem .75rem .85rem;
+  }
+  header .socialMedia a i {
+    font-size: 1rem;
+  }
+  header .languageButtons a button {
+    height: 40px;
+    width: 40px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  header {
+    -webkit-box-pack: right;
+        -ms-flex-pack: right;
+            justify-content: right;
+  }
+  header .hamburger, header .hamburgerSocialMedia {
+    display: block;
+  }
+  header .hamburger {
+    position: absolute;
+    color: transparent;
+    top: 1rem;
+    left: 1rem;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #cdbe91;
+    border-radius: 50%;
+    font-size: 1rem;
+    z-index: 1000000000000000;
+  }
+  header .hamburger .hamburgerSocialMedia {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 2rem;
+    position: absolute;
+    height: 100vh;
+    width: 25vh;
+    padding: 2rem;
+    background: #cdbe91;
+    z-index: 0;
+    -webkit-transition: all .2s ease;
+    transition: all .2s ease;
+    -webkit-transform: translateX(-110%);
+            transform: translateX(-110%);
+    margin-top: -2rem;
+  }
+  header .hamburger .hamburgerSocialMedia a {
+    position: relative;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    color: #020b18;
+    border: 1px solid #020b18;
+  }
+  header .hamburger .hamburgerSocialMedia a i {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  header .hamburger .upperLine, header .hamburger .lowerLine {
+    z-index: 1;
+    -webkit-transition: all .2s ease;
+    transition: all .2s ease;
+    pointer-events: none;
+  }
+  header .hamburger .upperLine {
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background-color: #cdbe91;
+    bottom: 40%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  header .hamburger .lowerLine {
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background-color: #cdbe91;
+    top: 40%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  header .hamburger #socialCheckbox {
+    opacity: 0;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+  }
+  header .hamburger #socialCheckbox:checked ~ .hamburgerSocialMedia {
+    -webkit-transform: translateX(-10%);
+            transform: translateX(-10%);
+  }
+  header .hamburger #socialCheckbox:checked .hamburger::before, header .hamburger #socialCheckbox:checked .hamburger::after {
+    background-color: #020b18;
+  }
+  header .hamburger #socialCheckbox:checked ~ .upperLine, header .hamburger #socialCheckbox:checked ~ .lowerLine {
+    background-color: #000;
+  }
+  header .hamburger #socialCheckbox:checked ~ .upperLine {
+    -webkit-transform: translate(-50%, -50%) rotate(45deg);
+            transform: translate(-50%, -50%) rotate(45deg);
+  }
+  header .hamburger #socialCheckbox:checked ~ .lowerLine {
+    -webkit-transform: translate(-50%, 200%) rotate(-45deg);
+            transform: translate(-50%, 200%) rotate(-45deg);
+  }
+  header .socialMedia {
+    display: none;
+  }
+}
+/*# sourceMappingURL=Header.css.map */

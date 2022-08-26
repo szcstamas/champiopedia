@@ -1,0 +1,205 @@
+@font-face {
+  src: url(../assets/fonts/Friz-Quadrata-Regular.ttf);
+  font-family: friz-regular;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.5rem;
+  z-index: 2;
+}
+
+.container h1, .container #lead, .container p {
+  pointer-events: none;
+}
+
+.container h1 {
+  font-family: friz-regular;
+  letter-spacing: 4px;
+  font-size: 3rem;
+  color: #cdbe91;
+  text-transform: uppercase;
+  text-shadow: 0px 10px 10px #0518346b;
+}
+
+.container #lead {
+  font-size: 1.5rem;
+  font-family: friz-regular;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  color: #cdbe91;
+  text-shadow: 0px 10px 10px #0518346b;
+  margin-bottom: 2rem;
+}
+
+.container p {
+  color: #fffcee;
+  text-shadow: 0px 10px 10px #0518346b;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.container .inputContainer {
+  position: relative;
+}
+
+.container .inputContainer input {
+  font-size: 1.1rem;
+  padding: 1rem 2rem;
+  border-radius: 20px;
+  letter-spacing: 1px;
+  width: 325px;
+  max-width: 325px;
+  outline: none;
+  border: none;
+  background: #0518346b;
+  color: #cdbe91;
+  border: 1px solid #cdbe91;
+  -webkit-box-shadow: 0px 0px 20px #0518346b;
+          box-shadow: 0px 0px 20px #0518346b;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.container .inputContainer input:hover {
+  background: #0518346b;
+  -webkit-box-shadow: 0px 0px 10px #cdbe91;
+          box-shadow: 0px 0px 10px #cdbe91;
+}
+
+.container .inputContainer input::-webkit-input-placeholder {
+  font-family: 'Poppins', sans-serif;
+  color: #cdbe91;
+}
+
+.container .inputContainer input:-ms-input-placeholder {
+  font-family: 'Poppins', sans-serif;
+  color: #cdbe91;
+}
+
+.container .inputContainer input::-ms-input-placeholder {
+  font-family: 'Poppins', sans-serif;
+  color: #cdbe91;
+}
+
+.container .inputContainer input::placeholder {
+  font-family: 'Poppins', sans-serif;
+  color: #cdbe91;
+}
+
+.container .inputContainer #reset {
+  position: absolute;
+  width: 50px;
+  height: 100%;
+  top: 0;
+  right: 0;
+  border-radius: 0px 20px 20px 0px;
+  background: transparent;
+  border: 1px solid #cdbe91;
+  color: #cdbe91;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  overflow: hidden;
+}
+
+.container .inputContainer #reset i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.container .inputContainer #reset::after {
+  content: '';
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) scale(0);
+          transform: translate(-50%, -50%) scale(0);
+  border-radius: 50%;
+  background: #cdbe91;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.container .inputContainer #reset:hover {
+  color: #000;
+}
+
+.container .inputContainer #reset:hover:after {
+  z-index: 0;
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+}
+
+.container button {
+  font-family: inherit;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  padding: 1rem 1.5rem;
+  background: #7979e7;
+  color: #fff;
+  font-weight: 600;
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.container #inputError {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-top: 1rem;
+  gap: 1rem;
+  border: 1px solid #ff8181;
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+}
+
+.container #inputError p, .container #inputError i {
+  color: #ff8181;
+  margin-bottom: 0;
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    margin-top: 2rem;
+  }
+  .container h1 {
+    font-size: 2.5rem;
+  }
+}
+/*# sourceMappingURL=SiteNameAndInput.css.map */

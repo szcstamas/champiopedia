@@ -1,0 +1,22 @@
+@import '../../globalstyles/Variables.scss';
+
+#goTopButton {
+    position: fixed;
+    background: $lightYellow;
+    color: #000;
+    font-size: 1.5rem;
+    right: 25px;
+    bottom: -15px;
+    text-decoration: none;
+    padding: 2rem;
+    border-radius: 50% 50% 0 0;
+    transition: all .2s ease;
+
+    clip-path: polygon(50% 0%, 100% 40%, 100% 100%, 0% 100%, 0% 40%);
+    z-index: 100000000000000;
+
+    &:hover {
+        background: #fff;
+        bottom: 0;
+    }
+}

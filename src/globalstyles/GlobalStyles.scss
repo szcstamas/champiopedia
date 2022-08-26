@@ -1,0 +1,131 @@
+@import '../components/index.scss';
+
+/* global styling */
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: url(../assets/img/cursor.png), auto;
+ }
+
+ *::-webkit-scrollbar {
+    width: 10px;
+    background: $mainBlue;
+ }
+
+ *::-webkit-scrollbar-thumb {
+    background: $lightYellow;
+    border-radius: 10px;
+ }
+
+ *::-webkit-scrollbar-thumb:hover {
+    background: $cyanColor;
+ }
+
+html {
+
+    scroll-behavior: smooth;
+}
+
+ button:hover,
+ a:hover,
+ input:hover
+ {
+
+    cursor: url(../assets/img/cursor_hover.png), auto!important;
+ }
+
+ :focus {
+
+    border: none;
+    outline: none;
+    background: $lightYellow;
+    color: $darkColor;
+ }
+
+ ::selection {
+
+    color: $darkColor;
+    background: #cdbe91;
+ }
+
+ body {
+
+    position: relative;
+    font-family: 'Rubik', sans-serif;
+    background: $mainBlue;
+    overflow-x: hidden;
+ }
+
+ .language-loader {
+
+   @include flexCenter(column, center);
+   gap: 2rem;
+
+   z-index: 100000000000000000000000000000000;
+   position: absolute;
+   height: 100vh;
+   width: 100vw;
+   text-align: center;
+   background: $lightYellow;
+   color: #272727;
+
+   i {
+      animation: rotating 2s linear infinite;
+      font-size: 2rem;
+   }
+
+   @keyframes rotating {
+      from { transform: rotate(0deg) }
+      to { transform: rotate(360deg) }
+   }
+ }
+
+ .noticebox {
+
+   position: fixed;
+   bottom: 20px;
+   left: 20px;
+   width: 350px;
+   height: auto;
+   padding: 2rem;
+   background: $lightYellow;
+   border: 3px solid $mainBlue;
+   z-index: 99999999999999999999;
+   line-height: 1.5rem;
+
+   a {
+      color: $mainBlue;
+      font-weight: 800;
+   }
+
+   button {
+      @include flexCenter(center, row);
+
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      border-radius: 50%;
+      border: 1px solid $mainBlue;
+      padding: 10px;
+      background: transparent;
+      transition: all .2s ease;
+
+      &:hover {
+         background: $mainBlue;
+         color: $lightYellow;
+         transform: translateY(-5px);
+      }
+
+      i {
+         width: 10px;
+         height: 10px;
+
+         display: flex;
+         justify-content: center;
+         align-items: center;
+      }
+   }
+
+ }

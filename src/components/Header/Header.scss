@@ -1,0 +1,328 @@
+@import '../../globalstyles/Variables.scss';
+
+header {
+
+    position: sticky;
+    top: 0;
+    width: 100%;
+    backdrop-filter: blur(8px);
+    z-index: 10000000;
+    padding: 1rem 10rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    #headerSVG {
+            height: 50px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            transition: all .2s ease;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    .socialMedia {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+
+        a {
+
+            padding: 0.9rem;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 1px solid $lightYellow;
+            text-decoration: none;
+            color: $lightYellow;
+            position: relative;
+
+            i {
+
+                font-size: 1.25rem;
+            }
+        }
+        
+        a:hover {
+
+            color: #000;
+        }
+
+        a::after {
+
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: $lightYellow;
+            transform: translate(-50%, -50%) scale(0);
+            z-index: -1;
+            transition: all 0.3s ease;
+        }
+
+        a:hover:after {
+
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        a:first-child {
+
+            padding: 0.9rem 0.9rem 1rem 1.1rem;
+        }
+    }
+
+    .languageButtons {
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+
+        button {
+
+            cursor: pointer;
+            background: transparent;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 1px solid $lightYellow;
+            text-decoration: none;
+            color: $lightYellow;
+            position: relative;
+        }
+
+        button::after {
+
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: $lightYellow;
+            transform: translate(-50%, -50%) scale(0);
+            z-index: -1;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+
+            color: #000;
+        }
+
+        button:hover:after {
+
+            transform: translate(-50%, -50%) scale(1);
+        }
+    }
+
+    .active {
+
+        background-color: $lightYellow!important;
+        color: #000!important;
+        position: relative;
+        transition: all 0.4s ease;
+    }
+
+    .active::before {
+
+        content: '';
+        position: absolute;
+        width: 120%;
+        height: 120%;
+        top: 50%;
+        left: 50%;
+        border-radius: 50%;
+        background: linear-gradient(to right, $darkColor 20%, rgb(80, 182, 255));
+        box-shadow: 10px 0px 20px rgba(80, 182, 255, 0.386);
+        z-index: -1;
+        animation: rotate 1.5s linear infinite;
+        transition: all 0.4s ease;
+
+        @keyframes rotate {
+
+            0% {
+
+                transform: translate(-50%, -50%) rotate(0deg)
+            }
+
+            100% {
+
+                transform: translate(-50%, -50%) rotate(360deg)
+            }
+        }
+    }
+}
+
+.hamburgerSocialMedia {
+    display: none;
+}
+
+@media screen and (max-width: 1300px) {
+    header {
+        padding: 1rem 5rem;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    header {
+        padding: 1rem 2rem;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    header {
+
+        padding: 1rem 1rem;
+        
+        .socialMedia {
+            a {
+                width: 40px;
+                height: 40px;
+                padding: .65rem .5rem .75rem .7rem;
+
+                &:first-child {
+                    padding: .65rem .5rem .75rem .85rem;
+                }
+
+                i {
+                    font-size: 1rem;
+                }
+            }
+        }
+
+        .languageButtons {
+            a {
+                button {
+                    height: 40px;
+                    width: 40px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 560px) {
+    header {
+
+        justify-content: right;
+
+        .hamburger, .hamburgerSocialMedia {
+            display: block;
+        }
+    
+        .hamburger {
+            position: absolute;
+            color: transparent;
+            top: 1rem;
+            left: 1rem;
+            width: 40px;
+            height: 40px;
+            border: 1px solid $lightYellow;
+            border-radius: 50%;
+            font-size: 1rem;
+            z-index: 1000000000000000;
+    
+            .hamburgerSocialMedia {
+                @include flexCenter(column, center);
+                gap: 2rem;
+        
+                position: absolute;
+                height: 100vh;
+                width: 25vh;
+                padding: 2rem;
+                background: $lightYellow;
+                z-index: 0;
+                transition: all .2s ease;
+                transform: translateX(-110%);
+                margin-top: -2rem;
+        
+                a {
+                    position: relative;
+                    border-radius: 50%;
+                    width: 50px;
+                    height: 50px;
+                    color: $mainBlue;
+                    border: 1px solid $mainBlue;
+        
+                    i {
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+            }
+
+            .upperLine, .lowerLine {
+                z-index: 1;
+                transition: all .2s ease;
+                pointer-events: none;
+            }
+
+            .upperLine {
+                position: absolute;
+                width: 20px;
+                height: 2px;
+                background-color: $lightYellow;
+                bottom: 40%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+    
+            .lowerLine {
+                position: absolute;
+                width: 20px;
+                height: 2px;
+                background-color: $lightYellow;
+                top: 40%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+    
+            #socialCheckbox {
+                opacity: 0;
+                position: absolute;
+                z-index: 1;
+                width: 100%;
+                height: 100%;
+            }
+    
+            #socialCheckbox:checked ~ .hamburgerSocialMedia {
+                transform: translateX(-10%);
+            }
+
+            #socialCheckbox:checked .hamburger::before, #socialCheckbox:checked .hamburger::after {
+                background-color: $mainBlue;
+            }
+
+            #socialCheckbox:checked ~ .upperLine, #socialCheckbox:checked ~ .lowerLine {
+                background-color: #000;
+            }
+
+            #socialCheckbox:checked ~ .upperLine {
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+
+            #socialCheckbox:checked ~ .lowerLine {
+                transform: translate(-50%, 200%) rotate(-45deg);
+            }
+        }
+
+        .socialMedia {
+            display: none;
+        }
+    }
+
+}

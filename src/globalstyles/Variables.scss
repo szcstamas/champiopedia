@@ -1,0 +1,26 @@
+$lightYellow: #cdbe91;
+$mainBlue: #020b18;
+$darkColor: #0518346b;
+$cyanColor: #50b6ff;
+
+@font-face {
+
+    src: url(../assets/fonts/Friz-Quadrata-Regular.ttf);
+    font-family: friz-regular;
+}
+
+@mixin flexCenter($direction, $justify) {
+
+    display: flex;
+    justify-content: $justify;
+    align-items: center;
+    flex-direction: $direction;
+} 
+
+@mixin flexLeft($direction, $justify) {
+
+    display: flex;
+    justify-content: $justify;
+    align-items: left;
+    flex-direction: $direction;
+} 

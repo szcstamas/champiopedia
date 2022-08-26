@@ -1,0 +1,818 @@
+@font-face {
+  src: url(../assets/fonts/Friz-Quadrata-Regular.ttf);
+  font-family: friz-regular;
+}
+
+.champContentContainer {
+  margin-top: 2rem;
+  width: 100%;
+  padding: 0 5rem 5rem 5rem;
+  z-index: 100;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1rem;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+.champContentContainer .latestChampAndMinimap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  width: 100%;
+  height: 100%;
+}
+
+.champContentContainer .latestChampAndMinimap .mapContainer {
+  height: 100%;
+  width: calc(60% - .5rem);
+}
+
+.champContentContainer .latestChampAndMinimap .mapContainer .latestChampionHeader {
+  position: relative;
+}
+
+.champContentContainer .latestChampAndMinimap .mapContainer .latestChampionHeader .champCompInfoText {
+  position: absolute;
+  height: 100%;
+  border-right: 1px solid #cdbe91;
+  left: 0;
+  padding: 1rem;
+  top: 0;
+}
+
+.champContentContainer .latestChampAndMinimap .mapContainer .latestChampionHeader .champCompInfoText i {
+  margin-right: 5px;
+}
+
+.champContentContainer .latestChampAndMinimap .mapContainer .latestChampionHeader .assembleInfo {
+  font-size: 20px;
+  font-weight: bold;
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  right: -10px;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: #cdbe91;
+  color: #020b18;
+  padding-top: 5px;
+}
+
+.champContentContainer .latestChampAndMinimap .mapContainer .latestChampionHeader .assembleInfo:hover {
+  background: #fff;
+}
+
+.champContentContainer .latestChampAndMinimap .mapContainer .latestChampionHeader .assembleInfo:hover .assembleText {
+  top: -160px;
+  opacity: 1;
+  visibility: visible;
+  font-weight: normal;
+}
+
+.champContentContainer .latestChampAndMinimap .mapContainer .latestChampionHeader .assembleInfo .assembleText {
+  font-size: 16px;
+  padding: 1.5rem;
+  position: absolute;
+  top: -120px;
+  right: 0px;
+  width: 250px;
+  background: #cdbe91;
+  color: #020b18;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 100000;
+}
+
+.champContentContainer .latestChampAndMinimap .mapContainer .latestChampionHeader .assembleInfo .assembleText::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  right: 0;
+  border-right: 30px solid #cdbe91;
+  border-left: 10px solid transparent;
+  border-bottom: 25px solid transparent;
+  pointer-events: none;
+}
+
+.champContentContainer .latestChampAndMinimap .mapContainer .assembleAndMinimapContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  border: 1px solid #cdbe91;
+  height: 370px;
+}
+
+.champContentContainer .latestChampAndMinimap .mapContainer .assembleAndMinimapContainer .assembleTeamContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #fff;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 350px;
+  padding: 2rem;
+  width: 62%;
+}
+
+.champContentContainer .latestChampAndMinimap .mapContainer .assembleAndMinimapContainer .assembleTeamContainer .assembleTeam {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 5rem;
+}
+
+.champContentContainer .latestChampAndMinimap .mapContainer .assembleAndMinimapContainer .assembleTeamContainer .assembleTeam .assembleTeamNames {
+  font-family: friz-regular;
+  font-size: 1.4rem;
+  position: relative;
+}
+
+.champContentContainer .latestChampAndMinimap .mapContainer .assembleAndMinimapContainer .assembleTeamContainer h4 {
+  font-size: 1.5rem;
+  color: #cdbe91;
+  font-family: friz-regular;
+}
+
+.champContentContainer .latestChampAndMinimap .mapContainer .minimapImgContainer {
+  height: 100%;
+  width: 38%;
+  overflow: hidden;
+  border-right: 1px solid #cdbe91;
+  position: relative;
+}
+
+.champContentContainer .latestChampAndMinimap .mapContainer .minimapImgContainer .minimapCircle {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background-color: #020b18;
+  border-radius: 50%;
+  border: 2px solid #cdbe91;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+.champContentContainer .latestChampAndMinimap .mapContainer .minimapImgContainer .minimapCircle img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 65%;
+  height: auto;
+  z-index: 3;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+  pointer-events: none;
+}
+
+.champContentContainer .latestChampAndMinimap .mapContainer .minimapImgContainer .minimapCircle::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 55px;
+  height: 55px;
+  -webkit-animation: rotate 2s linear infinite;
+          animation: rotate 2s linear infinite;
+  border-radius: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+  background: -webkit-gradient(linear, left top, right top, from(#0518346b), color-stop(#cdbe91), to(#0518346b));
+  background: linear-gradient(to right, #0518346b, #cdbe91, #0518346b);
+  -webkit-box-shadow: 0px 5px 10px #cdbe91;
+          box-shadow: 0px 5px 10px #cdbe91;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.champContentContainer .latestChampAndMinimap .mapContainer .minimapImgContainer .minimapCircle::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  background: #cdbe91;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.champContentContainer .latestChampAndMinimap .mapContainer .minimapImgContainer .minimapCircle:hover {
+  -webkit-transform: translate(-50%, -60%);
+          transform: translate(-50%, -60%);
+  -webkit-box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+.champContentContainer .latestChampAndMinimap .mapContainer .minimapImgContainer .minimapCircle:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+.champContentContainer .latestChampAndMinimap .mapContainer .minimapImgContainer .minimapCircle:hover::after {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.champContentContainer .latestChampAndMinimap .mapContainer .minimapImgContainer .minimapCircle:hover img {
+  -webkit-filter: brightness(0%);
+          filter: brightness(0%);
+}
+
+.champContentContainer .latestChampAndMinimap .mapContainer .minimapImgContainer .minimapCircle:active::after, .champContentContainer .latestChampAndMinimap .mapContainer .minimapImgContainer .minimapCircle:focus::after {
+  display: none;
+}
+
+.champContentContainer .latestChampAndMinimap .mapContainer .minimapImgContainer .minimapCircle:active::after, .champContentContainer .latestChampAndMinimap .mapContainer .minimapImgContainer .minimapCircle:focus::after {
+  display: none;
+}
+
+.champContentContainer .latestChampAndMinimap .mapContainer .minimapImgContainer .topCircle {
+  left: 15%;
+  top: 15%;
+}
+
+.champContentContainer .latestChampAndMinimap .mapContainer .minimapImgContainer .midCircle {
+  left: 50%;
+  top: 50%;
+}
+
+.champContentContainer .latestChampAndMinimap .mapContainer .minimapImgContainer .jungleCircle {
+  left: 45%;
+  top: 25%;
+}
+
+.champContentContainer .latestChampAndMinimap .mapContainer .minimapImgContainer .bottomCircle {
+  left: 90%;
+  top: 80%;
+}
+
+.champContentContainer .latestChampAndMinimap .mapContainer .minimapImgContainer .supportCircle {
+  left: 75%;
+  top: 90%;
+}
+
+.champContentContainer .latestChampAndMinimap .mapContainer .minimapImgContainer img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.champContentContainer .latestChampAndMinimap .latestChampionHeader {
+  padding: 1rem 0;
+  width: 100%;
+  font-weight: 400;
+  color: #cdbe91;
+  background: #fff;
+  letter-spacing: 0px;
+  text-align: center;
+  border: 1px solid #cdbe91;
+  border-bottom: none;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  background: #0518346b;
+}
+
+@media screen and (max-width: 1300px) {
+  .champContentContainer .latestChampAndMinimap {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 1rem;
+  }
+  .champContentContainer .latestChampAndMinimap .latestChampionContainer .latestChampion {
+    height: 330px;
+  }
+  .champContentContainer .latestChampAndMinimap .mapContainer .assembleAndMinimapContainer .assembleTeamContainer {
+    width: 60%;
+  }
+  .champContentContainer .latestChampAndMinimap .latestChampionContainer, .champContentContainer .latestChampAndMinimap .mapContainer {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .champContentContainer .latestChampAndMinimap {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 1rem;
+  }
+  .champContentContainer .latestChampAndMinimap .latestChampionContainer .latestChampion {
+    height: 250px;
+  }
+  .champContentContainer .latestChampAndMinimap .mapContainer .assembleAndMinimapContainer .assembleTeamContainer {
+    width: 50%;
+    padding: 1.5rem;
+  }
+  .champContentContainer .latestChampAndMinimap .mapContainer .assembleAndMinimapContainer .assembleTeamContainer .assembleTeam {
+    gap: 2rem;
+  }
+  .champContentContainer .latestChampAndMinimap .mapContainer .minimapImgContainer {
+    width: 60%;
+  }
+  .champContentContainer .latestChampAndMinimap .latestChampionContainer, .champContentContainer .latestChampAndMinimap .mapContainer {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .champContentContainer .latestChampAndMinimap {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 1rem;
+  }
+  .champContentContainer .latestChampAndMinimap .latestChampionContainer .latestChampion {
+    height: 250px;
+  }
+  .champContentContainer .latestChampAndMinimap .mapContainer .assembleAndMinimapContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 100%;
+  }
+  .champContentContainer .latestChampAndMinimap .mapContainer .assembleAndMinimapContainer .assembleTeamContainer {
+    width: 100%;
+    padding: 1.5rem;
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
+    gap: 1.5rem;
+    height: 100%;
+  }
+  .champContentContainer .latestChampAndMinimap .mapContainer .assembleAndMinimapContainer .assembleTeamContainer .assembleTeam {
+    gap: 2rem;
+  }
+  .champContentContainer .latestChampAndMinimap .mapContainer .minimapImgContainer {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #cdbe91;
+  }
+  .champContentContainer .latestChampAndMinimap .latestChampionContainer, .champContentContainer .latestChampAndMinimap .mapContainer {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .champContentContainer .latestChampAndMinimap {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 1rem;
+  }
+  .champContentContainer .latestChampAndMinimap .latestChampionContainer .latestChampion {
+    height: 250px;
+    padding: 6rem 3rem;
+    background-size: 125% !important;
+  }
+  .champContentContainer .latestChampAndMinimap .mapContainer .assembleAndMinimapContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 100%;
+  }
+  .champContentContainer .latestChampAndMinimap .mapContainer .assembleAndMinimapContainer .assembleTeamContainer {
+    width: 100%;
+    padding: 1.5rem;
+  }
+  .champContentContainer .latestChampAndMinimap .mapContainer .assembleAndMinimapContainer .assembleTeamContainer .assembleTeam {
+    gap: 2rem;
+  }
+  .champContentContainer .latestChampAndMinimap .mapContainer .minimapImgContainer {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #cdbe91;
+  }
+  .champContentContainer .latestChampAndMinimap .latestChampionContainer, .champContentContainer .latestChampAndMinimap .mapContainer {
+    width: 100%;
+  }
+}
+
+.champContentContainer .latestChampionContainer {
+  width: calc(40% - .5rem);
+  height: 100%;
+  z-index: 0;
+}
+
+.champContentContainer .latestChampionContainer .latestChampionHeader {
+  padding: 1rem 0;
+  width: 100%;
+  font-weight: 400;
+  color: #cdbe91;
+  background: #fff;
+  letter-spacing: 0px;
+  text-align: center;
+  border: 1px solid #cdbe91;
+  border-bottom: none;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  background: #0518346b;
+}
+
+.champContentContainer .latestChampionContainer .latestChampion {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: topw !important;
+  font-family: friz-regular;
+  font-size: 2rem !important;
+  color: #fff !important;
+  position: relative;
+  overflow: hidden;
+  height: 370px;
+  width: 100%;
+  outline: none;
+  text-align: left;
+  border: 1px solid #cdbe91;
+  -webkit-transition: all 0.2s ease !important;
+  transition: all 0.2s ease !important;
+  padding: 6rem;
+}
+
+.champContentContainer .latestChampionContainer .latestChampion h4, .champContentContainer .latestChampionContainer .latestChampion p {
+  pointer-events: none;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+}
+
+.champContentContainer .latestChampionContainer .latestChampion h4 {
+  font-size: 3rem;
+  color: #cdbe91;
+}
+
+.champContentContainer .latestChampionContainer .latestChampion .latestChampionBackgroundLayer {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.458);
+  opacity: 0.5;
+  z-index: 0;
+  pointer-events: none;
+  -webkit-transition: all 0.2s ease !important;
+  transition: all 0.2s ease !important;
+}
+
+.champContentContainer .latestChampionContainer .latestChampion:hover .latestChampionBackgroundLayer {
+  background: transparent;
+}
+
+.champContentContainer .latestChampionContainer .latestChampion:hover:after {
+  -webkit-transform: translate(-50%, -50%) scale(2);
+          transform: translate(-50%, -50%) scale(2);
+}
+
+.champContentContainer .latestChampionContainer .latestChampion::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 10px;
+  height: 100%;
+  background: #cdbe91;
+  -webkit-box-shadow: 0px 0px 20px #fff;
+          box-shadow: 0px 0px 20px #fff;
+  -webkit-transform: skew(-45deg) translateX(-2000px);
+          transform: skew(-45deg) translateX(-2000px);
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+  -webkit-animation: shine 5s infinite;
+          animation: shine 5s infinite;
+}
+
+@-webkit-keyframes shine {
+  0% {
+    -webkit-transform: skew(-45deg) translateX(-2000px);
+            transform: skew(-45deg) translateX(-2000px);
+  }
+  50%, 100% {
+    -webkit-transform: skew(-45deg) translateX(2000px);
+            transform: skew(-45deg) translateX(2000px);
+  }
+}
+
+@keyframes shine {
+  0% {
+    -webkit-transform: skew(-45deg) translateX(-2000px);
+            transform: skew(-45deg) translateX(-2000px);
+  }
+  50%, 100% {
+    -webkit-transform: skew(-45deg) translateX(2000px);
+            transform: skew(-45deg) translateX(2000px);
+  }
+}
+
+.champContentContainer .allChampionContainer {
+  border-top: 1px solid #cdbe91;
+  margin-top: 1rem;
+  padding-top: 2rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  width: 100%;
+}
+
+.champContentContainer .allChampionContainer a {
+  position: relative;
+  /* had to overwrite MonkeyKing content since its Wukong not MonkeyKing... api is bad */
+}
+
+.champContentContainer .allChampionContainer a #MonkeyKing .oneChampHeader::after {
+  content: 'Wukong';
+  position: absolute;
+  bottom: 35%;
+  left: 0;
+}
+
+.champContentContainer .allChampionContainer a #MonkeyKing .oneChampName {
+  opacity: 0;
+}
+
+.champContentContainer .allChampionContainer a .oneChampButton {
+  position: relative;
+  width: 100%;
+  font-family: friz-regular;
+  font-size: 1.75rem;
+  background-size: 110% !important;
+  background-repeat: no-repeat !important;
+  background-position: center;
+  padding: 5rem 3rem;
+  text-align: left;
+  color: #cdbe91;
+  text-shadow: 0px 0px 0px black;
+  outline: none;
+  border: 1px solid #cdbe91;
+  cursor: pointer;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  background: #0518346b;
+  overflow: hidden;
+}
+
+.champContentContainer .allChampionContainer a .oneChampButton span {
+  width: 100%;
+  padding: 1rem 0rem;
+}
+
+.champContentContainer .allChampionContainer a .oneChampButton .oneChampHeader {
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+.champContentContainer .allChampionContainer a .oneChampButton .oneChampHeader .oneChampTitle {
+  font-family: 'Rubik', sans-serif;
+  font-size: 1rem;
+  color: #fff;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+  margin-top: .25rem;
+}
+
+.champContentContainer .allChampionContainer a .oneChampButton::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #cdbe91;
+  opacity: .75;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  z-index: -1;
+}
+
+.champContentContainer .allChampionContainer a .oneChampButton:hover {
+  color: #000;
+  text-shadow: none;
+  background: transparent;
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+  -webkit-box-shadow: 0px 10px 15px #0518346b;
+          box-shadow: 0px 10px 15px #0518346b;
+}
+
+.champContentContainer .allChampionContainer a .oneChampButton:hover .oneChampButtonShadow {
+  opacity: 0;
+}
+
+.champContentContainer .allChampionContainer a .oneChampButton:hover .oneChampHeader .oneChampTitle {
+  color: #000;
+}
+
+.champContentContainer .allChampionContainer a .oneChampButton:hover:after {
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+}
+
+.champContentContainer .allChampionContainer a .oneChampButtonShadow {
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: -webkit-gradient(linear, left bottom, left top, from(#000), to(transparent));
+  background: linear-gradient(to top, #000, transparent);
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.champContentContainer .allChampionContainer a .oneChampHeader {
+  position: absolute;
+  bottom: 20%;
+  left: 10%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+@media screen and (max-width: 900px) {
+  .champContentContainer {
+    padding: 0 1rem 2rem 1rem;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .champContentContainer .latestChampAndMinimap .mapContainer .minimapImgContainer {
+    width: 52% !important;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .champContentContainer .latestChampAndMinimap .mapContainer .minimapImgContainer {
+    width: 45%;
+  }
+}
+
+@media screen and (min-width: 2100px) {
+  .champContentContainer .latestChampAndMinimap {
+    max-width: 1600px;
+  }
+}
+
+.activeSortButton {
+  background-color: #cdbe91 !important;
+  -webkit-box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+  position: relative;
+  -webkit-transform: translateY(-50%, -50%) !important;
+          transform: translateY(-50%, -50%) !important;
+}
+
+.activeSortButton:hover {
+  -webkit-transform: translate(-50%, -50%) !important;
+          transform: translate(-50%, -50%) !important;
+}
+
+.activeSortButton img {
+  -webkit-filter: brightness(0%);
+          filter: brightness(0%);
+}
+
+.activeSortButton::before, .activeSortButton::after {
+  display: none;
+}
+
+#sortAllChampionsContainer {
+  width: 100%;
+  gap: 1rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(175px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+}
+
+#sortAllChampionsContainer a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: relative;
+  gap: 1rem;
+  width: 100%;
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 1rem 0;
+  background: #cdbe91;
+  color: #000;
+  border: none;
+  text-decoration: none;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+#sortAllChampionsContainer a:hover {
+  background: #000;
+  color: #cdbe91;
+}
+
+#sortAllChampionsContainer a .sortAllChampsButtonImageContainer {
+  height: 20px;
+  width: 20px;
+}
+
+#sortAllChampionsContainer a .sortAllChampsButtonImageContainer img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+/*# sourceMappingURL=AllChampionResults.css.map */
