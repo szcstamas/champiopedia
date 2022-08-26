@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/champiopedia/static/css/main.5c271338.css",
+    "main.js": "/champiopedia/static/js/main.1b9bf1d6.js",
+    "static/media/demacia.jpeg": "/champiopedia/static/media/demacia.17521f53815ca172441a.jpeg",
+    "static/media/noxus.jpeg": "/champiopedia/static/media/noxus.b7399688e0ef89c6f579.jpeg",
+    "static/media/piltower.jpeg": "/champiopedia/static/media/piltower.e98a4f90131ce44f8dec.jpeg",
+    "static/media/ionia.webp": "/champiopedia/static/media/ionia.1afd5aa93a2fac7828d9.webp",
+    "static/media/bilgewater.webp": "/champiopedia/static/media/bilgewater.ad9a195fe8af70304272.webp",
+    "static/media/freljord.webp": "/champiopedia/static/media/freljord.e674653c5b8b08147dbd.webp",
+    "static/media/Friz-Quadrata-Regular.ttf": "/champiopedia/static/media/Friz-Quadrata-Regular.ea4c7ba35e309c25f01a.ttf",
+    "index.html": "/champiopedia/index.html",
+    "static/media/Jungle_icon.webp": "/champiopedia/static/media/Jungle_icon.ff9f4ae0434ff3e42b80.webp",
+    "static/media/Support_icon.webp": "/champiopedia/static/media/Support_icon.a23c39d4331dba514280.webp",
+    "static/media/Middle_icon.webp": "/champiopedia/static/media/Middle_icon.2c04c46c8c7660d0ddc2.webp",
+    "static/media/Bottom_icon.webp": "/champiopedia/static/media/Bottom_icon.7282ceb0cb5c3c687d86.webp",
+    "static/media/Top_icon.webp": "/champiopedia/static/media/Top_icon.e7ff85842800dfd6b9f9.webp",
+    "main.5c271338.css.map": "/champiopedia/static/css/main.5c271338.css.map",
+    "main.1b9bf1d6.js.map": "/champiopedia/static/js/main.1b9bf1d6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5c271338.css",
+    "static/js/main.1b9bf1d6.js"
+  ]
+}
