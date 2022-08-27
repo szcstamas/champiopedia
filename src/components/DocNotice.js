@@ -21,7 +21,7 @@ const DocNotice = () => {
                     <button onClick={() => {
                         setVisible(false);
                     }}><i class="fa-solid fa-xmark"></i></button>
-                    <p>Thanks for visiting my first React application! If you would like to know more about this site, make sure to read <a href="#">the documentation on my Github</a>.</p>
+                    <p>Thanks for visiting my first React application! If you would like to know more about this site, make sure to read <a href="https://github.com/szcstamas/champiopedia">the documentation on my Github</a>.</p>
                 </motion.div>
             }
         </AnimatePresence>
