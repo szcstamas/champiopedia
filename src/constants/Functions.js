@@ -7,10 +7,14 @@ function fetchLolApiVersion(versionstate) {
     axios.get('https://ddragon.leagueoflegends.com/api/versions.json')
         .then(res => {
 
+            //getting values of api data
             const versionValues = Object.values(res.data)
+            //getting versions
             const versions = versionValues.map(i => i)
+            //getting the first child of array (which is the newest version of api)
             const latestVersion = versions[0];
 
+            //change version with state to newest version
             versionstate(latestVersion)
         })
 }
@@ -20,6 +24,7 @@ function fetchStartingData(version, language, latestChampName, latestChampTitle,
     axios.get(`https://ddragon.leagueoflegends.com/cdn/${version}/data/${language}/champion.json`)
         .then(res => {
 
+            //getting all necessary data from API
             const allChamps = res.data.data
             const champValues = Object.values(allChamps)
             const champNumbers = champValues.map(i => i.key) //getting the key property of every champion
@@ -52,11 +57,12 @@ function fetchStartingData(version, language, latestChampName, latestChampTitle,
         })
 }
 
-//activating map roles when clicking on lane on minimap
+//lever is set to true when clicking on a lane icon in minimap
 function switchLever(e, setSortButtonActiveClass, lever, setLever) {
 
     const targetClassname = e.target.classList
 
+    //adding active class when clicking on a lane icon 
     switch (true) {
         case targetClassname.contains('topCircle'):
             setSortButtonActiveClass('1')
@@ -77,6 +83,7 @@ function switchLever(e, setSortButtonActiveClass, lever, setLever) {
             break;
     }
 
+    //if the lever is false when clicking on a role icon, set lever to true (which will change action of changeInputToChamp -> see it in function)
     if (lever === false) {
         setLever(true);
     }
@@ -96,32 +103,45 @@ function changeInputToChamp(e, version, lever, champInput, inputText, language, 
         const sortLaneNames = document.querySelectorAll('.assembleTeamNames');
         const selectedActiveSortLaneButton = document.querySelector('.activeSortButton');
 
+        //change box of champ href to mapContainer-id to prevent outscrolling from content
+        e.target.parentElement.href = '#mapContainer';
+
+        //save datasets of champion box into non-constant variables
         let roleOfChosenChampion = e.target.parentElement.dataset.champrole;
         let nameOfChosenChampion = e.target.dataset.name;
 
+        //loop over each role next to minimap
         sortLaneNames.forEach(sortLaneName => {
 
+            //condition to avoid multiple selection of same champion
             if (!arrayOfChampionInTeamComp.includes(nameOfChosenChampion)) {
 
+                //condition to set proper champion img and role into selected role of text next to minimap (e.g. icon of Top lane goes to Top, icon of Jungle lane goes to Jungle, etc)
                 if (selectedActiveSortLaneButton.dataset.sortlanename === sortLaneName.dataset.lane) {
 
+                    //changing icon appearance into champion's data
                     selectedActiveSortLaneButton.childNodes[0].src = `https://ddragon.leagueoflegends.com/cdn/${version}/img/champion/${e.target.dataset.name}.png`;
                     selectedActiveSortLaneButton.style.overflow = 'hidden';
                     selectedActiveSortLaneButton.childNodes[0].style.width = '110%';
                     selectedActiveSortLaneButton.childNodes[0].style.filter = 'brightness(100%)';
 
+                    //changing text to name of champion
                     sortLaneName.textContent = e.target.dataset.name;
                     sortLaneName.dataset.role = roleOfChosenChampion;
+                    //remove active class from selected button (that little, shiny effect)
                     sortButtonActiveClass('0')
 
                     //CHAMPION TEAM-COMPOSITION CHECKER
+                    //if array of selected champions are smaller than 5, then just push these names and roles into array
                     if (arrayOfRolesOfAssignedChampions.length < 5) {
 
                         arrayOfRolesOfAssignedChampions.push(roleOfChosenChampion);
                         arrayOfChampionInTeamComp.push(nameOfChosenChampion);
 
-                    } else {
-                        //when clicking on a championBox after selecting a lane-icon, saves role of champion into an array
+                    }
+                    //BUT if length of array is 5 or more, than CHANGE these names and roles (not PUSH)
+                    else {
+                        //checking dataset sortlanename (top, jungle, mid, bottom, support) -> if it's top, assign it to first place in array, if it's jungle, assign it to second place, etc...
                         switch (selectedActiveSortLaneButton.dataset.sortlanename) {
                             case "top":
                                 arrayOfRolesOfAssignedChampions[0] = roleOfChosenChampion;
@@ -154,6 +174,7 @@ function changeInputToChamp(e, version, lever, champInput, inputText, language, 
             }
         })
 
+        //after magic is done, set lever to default (which is false)
         setLever(false);
     }
 

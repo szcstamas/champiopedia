@@ -37,7 +37,9 @@ const MapContainer = ({ siteText, minimapHeaderText, minimapInfoText, laneIconCl
         <motion.div
             initial={{ opacity: 0, y: -50 }}
             whileInView={{ opacity: 1, y: 0, transition: { delay: .1 } }}
-            className="mapContainer">
+            className="mapContainer"
+            id="mapContainer"
+        >
             <div className="latestChampionHeader">
                 <p className="champCompInfoText" style={{ color: championCompRolesColor }}><i className={championCompRolesIcon}></i>
                     {champCompInfoText} {arrayOfRolesOfAssignedChampions.length}/5</p>
