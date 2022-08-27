@@ -124,6 +124,20 @@
   pointer-events: none;
 }
 
+@media screen and (max-width: 830px) {
+  .champContentContainer .latestChampAndMinimap .mapContainer .latestChampionHeader .champCompInfoText {
+    position: static;
+    border: none;
+    padding: 0;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #cdbe91;
+    margin-bottom: 1rem;
+  }
+  .champContentContainer .latestChampAndMinimap .mapContainer .latestChampionHeader .assembleInfo {
+    top: 25%;
+  }
+}
+
 .champContentContainer .latestChampAndMinimap .mapContainer .assembleAndMinimapContainer {
   display: -webkit-box;
   display: -ms-flexbox;

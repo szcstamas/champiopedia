@@ -28,6 +28,8 @@
 
                 position: relative;
 
+
+
                 .champCompInfoText {
                     position: absolute;
                     height: 100%;
@@ -92,6 +94,22 @@
                             border-bottom: 25px solid transparent;
                             pointer-events: none;
                         }
+                    }
+                }
+                
+                @media screen and (max-width: 830px) {
+
+                    .champCompInfoText {
+                        position: static;
+                        border: none;
+                        padding: 0;
+                        padding-bottom: 1rem;
+                        border-bottom: 1px solid $lightYellow;
+                        margin-bottom: 1rem;
+                    }
+
+                    .assembleInfo {
+                        top: 25%;
                     }
                 }
             }
