@@ -21,11 +21,7 @@ const DocNotice = () => {
                     <button onClick={() => {
                         setVisible(false);
                     }}><i class="fa-solid fa-xmark"></i></button>
-<<<<<<< HEAD:src/components/DocNotice.js
-                    <p>Thanks for visiting my first React application! If you would like to know more about this site, make sure to read <a href="/">the documentation on my Github</a>.</p>
-=======
                     <p>Thanks for visiting my first React application! If you would like to know more about this site, make sure to read <a href="#">the documentation on my Github</a>.</p>
->>>>>>> d676963 (adding noticebox component to app with styles):lol_champinfo/src/components/DocNotice.js
                 </motion.div>
             }
         </AnimatePresence>

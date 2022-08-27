@@ -17,7 +17,7 @@ function fetchLolApiVersion(versionstate) {
 
 //rendering datas of all champions
 function fetchStartingData(version, language, latestChampName, latestChampTitle, latestChampImage, champRoles, allChampionData) {
-    axios.get(`https://ddragon.leagueoflegends.com/cdn/${version}/data/${language}/champion.json`)
+    axios.get(`http://ddragon.leagueoflegends.com/cdn/${version}/data/${language}/champion.json`)
         .then(res => {
 
             const allChamps = res.data.data
@@ -40,7 +40,7 @@ function fetchStartingData(version, language, latestChampName, latestChampTitle,
                 if (i.key === latestChampsNumberAsString) {
                     latestChampName(i.id)
                     latestChampTitle(i.title)
-                    latestChampImage(`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${i.id}_0.jpg`)
+                    latestChampImage(`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${i.id}_0.jpg`)
                 }
             })
 
@@ -105,7 +105,7 @@ function changeInputToChamp(e, version, lever, champInput, inputText, language, 
 
                 if (selectedActiveSortLaneButton.dataset.sortlanename === sortLaneName.dataset.lane) {
 
-                    selectedActiveSortLaneButton.childNodes[0].src = `https://ddragon.leagueoflegends.com/cdn/${version}/img/champion/${e.target.dataset.name}.png`;
+                    selectedActiveSortLaneButton.childNodes[0].src = `http://ddragon.leagueoflegends.com/cdn/${version}/img/champion/${e.target.dataset.name}.png`;
                     selectedActiveSortLaneButton.style.overflow = 'hidden';
                     selectedActiveSortLaneButton.childNodes[0].style.width = '110%';
                     selectedActiveSortLaneButton.childNodes[0].style.filter = 'brightness(100%)';
@@ -412,10 +412,10 @@ function getChampionByInputName(version, inputText, language, setOneChampData, s
     const inputValue = value.charAt(0).toUpperCase() + value.slice(1);
 
     //main api url
-    const dataBaseUrl = `https://ddragon.leagueoflegends.com/cdn/${version}/data/${language}/champion/${inputValue}.json`
+    const dataBaseUrl = `http://ddragon.leagueoflegends.com/cdn/${version}/data/${language}/champion/${inputValue}.json`
 
     //main image api url
-    const imgBaseUrl = `https://ddragon.leagueoflegends.com/cdn/${version}/img/champion/${inputValue}.png`
+    const imgBaseUrl = `http://ddragon.leagueoflegends.com/cdn/${version}/img/champion/${inputValue}.png`
 
     //using axios to fetch api data
     axios.get(dataBaseUrl)
