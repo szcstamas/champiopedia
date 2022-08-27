@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/champiopedia/static/css/main.5c271338.css",
-    "main.js": "/champiopedia/static/js/main.5392c19c.js",
+    "main.css": "/champiopedia/static/css/main.8600391a.css",
+    "main.js": "/champiopedia/static/js/main.4faaab9e.js",
     "static/media/demacia.jpeg": "/champiopedia/static/media/demacia.17521f53815ca172441a.jpeg",
     "static/media/noxus.jpeg": "/champiopedia/static/media/noxus.b7399688e0ef89c6f579.jpeg",
     "static/media/piltower.jpeg": "/champiopedia/static/media/piltower.e98a4f90131ce44f8dec.jpeg",
@@ -15,11 +15,11 @@
     "static/media/Middle_icon.webp": "/champiopedia/static/media/Middle_icon.2c04c46c8c7660d0ddc2.webp",
     "static/media/Bottom_icon.webp": "/champiopedia/static/media/Bottom_icon.7282ceb0cb5c3c687d86.webp",
     "static/media/Top_icon.webp": "/champiopedia/static/media/Top_icon.e7ff85842800dfd6b9f9.webp",
-    "main.5c271338.css.map": "/champiopedia/static/css/main.5c271338.css.map",
-    "main.5392c19c.js.map": "/champiopedia/static/js/main.5392c19c.js.map"
+    "main.8600391a.css.map": "/champiopedia/static/css/main.8600391a.css.map",
+    "main.4faaab9e.js.map": "/champiopedia/static/js/main.4faaab9e.js.map"
   },
   "entrypoints": [
-    "static/css/main.5c271338.css",
-    "static/js/main.5392c19c.js"
+    "static/css/main.8600391a.css",
+    "static/js/main.4faaab9e.js"
   ]
 }
