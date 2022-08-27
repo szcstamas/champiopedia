@@ -190,7 +190,7 @@ function changeLanguageAndActiveClass(e, setLanguage, setActiveClass, setSiteTex
         // if clicked on button that contains huLanguage class, change the api url from en_US to hu_HU 
         setLanguage(huLang);
         // if clicked on that button, give it an .active classname
-        setActiveClass('1');
+        setActiveClass(1);
         // if clicked on that button, modify text contents to hungarian
         setSiteText(huText);
 
@@ -207,7 +207,7 @@ function changeLanguageAndActiveClass(e, setLanguage, setActiveClass, setSiteTex
         // if clicked on button that NOT contains huLanguage class (in this case its only one other button), change the api url from hu_HU to en_US 
         setLanguage(enLang);
         // if clicked on that button, give it a .active classname
-        setActiveClass('2');
+        setActiveClass(2);
         // if clicked on that button, modify text contents to english
         setSiteText(enText)
 

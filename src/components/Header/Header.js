@@ -1,6 +1,10 @@
-import React from 'react'
+import React from 'react';
+import { SiteLanguages } from '../../constants/languages/SiteLanguages';
 
 const Header = ({ buttonLanguageClass, buttonLanguageFunction }) => {
+
+    const languageButtonTexts = ['HU', 'EN'];
+
     return (
         <header>
 
@@ -26,9 +30,21 @@ const Header = ({ buttonLanguageClass, buttonLanguageFunction }) => {
 
 
             <div className="languageButtons">
+
+                {
+
+                    Object.keys(SiteLanguages).map((languageName, index) => {
+
+                        return (
+                            <a href="#"><button className={buttonLanguageClass === (index + 1) ? `${languageName} active` : `${languageName}`} onClick={buttonLanguageFunction}>{languageButtonTexts[index]}</button></a>
+                        )
+                    })
+
+                }
+
                 {/* if buttonLanguageClass props is 1 or 2, give that button an ".active" className  */}
-                <a href="#"><button className={buttonLanguageClass === '1' ? 'huLanguage active' : 'huLanguage'} onClick={buttonLanguageFunction}>HU</button></a>
-                <a href="#"><button className={buttonLanguageClass === '2' ? 'engLanguage active' : 'engLanguage'} onClick={buttonLanguageFunction}>EN</button></a>
+                {/* <a href="#"><button className={buttonLanguageClass === '1' ? 'huLanguage active' : 'huLanguage'} onClick={buttonLanguageFunction}>HU</button></a>
+                <a href="#"><button className={buttonLanguageClass === '2' ? 'engLanguage active' : 'engLanguage'} onClick={buttonLanguageFunction}>EN</button></a> */}
             </div>
         </header>
     )

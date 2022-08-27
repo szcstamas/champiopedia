@@ -9,6 +9,9 @@ import { SiteLanguages } from './constants/languages/SiteLanguages';
 import './globalstyles/GlobalStyles.css';
 import { LoaderImgs } from './constants/LoaderBg';
 
+//destructuring SiteLanguages
+const { huLanguage, engLanguage } = SiteLanguages;
+
 //APP VARIABLE
 const App = () => {
 
@@ -28,7 +31,7 @@ const App = () => {
   const [championImg, setChampionImg] = useState('');
   const [oneChampionDisplay, setOneChampionDisplay] = useState(false);
   const [allChampionDisplay, setAllChampionDisplay] = useState(true);
-  const [languageButtonActiveClass, setActiveClass] = useState('2');
+  const [languageButtonActiveClass, setActiveClass] = useState(2);
   const [sortButtonActiveClass, setSortButtonActiveClass] = useState('0');
 
   const [inputErrorDisplay, setInputErrorDisplay] = useState(false);
@@ -40,7 +43,7 @@ const App = () => {
 
   const [siteText, setSiteText] = useState(EnglishSiteText);
   const [version, setVersion] = useState('');
-  const [language, setLanguage] = useState(SiteLanguages.eng);
+  const [language, setLanguage] = useState(engLanguage);
 
   const [champCompInfoText, setChampionCompRolesText] = useState(siteText.champCompDefaultText);
   const [championCompRolesColor, setChampionCompRolesColor] = useState('');
@@ -79,7 +82,7 @@ const App = () => {
       {/* Header of site */}
       <Header
         buttonLanguageClass={languageButtonActiveClass}
-        buttonLanguageFunction={(e) => functions.changeLanguageAndActiveClass(e, setLanguage, setActiveClass, setSiteText, SiteLanguages.hun, SiteLanguages.eng, HungarianSiteText, EnglishSiteText, inputText, version, language, setOneChampData, setChampionImg, setOneChampionDisplay, setAllChampionDisplay, setInputErrorDisplay, setChampionCompRolesText, setChampionCompRolesColor, setChampionCompRolesIcon, setLoaderDisplay, LoaderImgs, setLoaderBgImgIndex)}
+        buttonLanguageFunction={(e) => functions.changeLanguageAndActiveClass(e, setLanguage, setActiveClass, setSiteText, huLanguage, engLanguage, HungarianSiteText, EnglishSiteText, inputText, version, language, setOneChampData, setChampionImg, setOneChampionDisplay, setAllChampionDisplay, setInputErrorDisplay, setChampionCompRolesText, setChampionCompRolesColor, setChampionCompRolesIcon, setLoaderDisplay, LoaderImgs, setLoaderBgImgIndex)}
       />
 
       {/* Go to top button */}

@@ -1,6 +1,10 @@
 # CHAMPIOPEDIA
 Welcome to the repository of my first detailed ( - just a bit ) React application! I was working with component-based architecture while used Axios for fetching data, SCSS for styling and Framer Motion for animations.
 
+Link to webapp: <a href="https://szcstamas.github.io/champiopedia/">https://szcstamas.github.io/champiopedia/</a>
+
+<hr>
+
 ## What's this all about?
 This project is based on the popular online video game called League of Legends. The main purpose of this app is to practicing my skills and help me checking out the newest champions in the game. Below I describe everything that you have to know about this simple application.
 
@@ -35,4 +39,11 @@ You scrolled down that much and dont want to scroll back manually? Just hit the 
 
 <hr>
 
-Link to webapp: <a href="https://szcstamas.github.io/champiopedia/">https://szcstamas.github.io/champiopedia/</a>
+### Adding languages
+Let's just say that you want to see Champiopedia in a language other than english or hungarian. Well, there is a way to add your language into it!
+1. Go into `constants/languages/SiteLanguages.js` and add a key-value pair according to your language (e.g. you want to add spanish, so your key-value pair will be `espLanguage: 'es_ES'`). The value **must be** one of the strings I mentioned in the comments inside of SiteLangue.js, but key can be anything you like.
+2. Go into `constants/languages/SiteText.js` and create a new SiteText class with your strings (you can name your new class anything you want, but make sure to add strings in correct order to get best results).
+3. Your language variable and class is ready to go! Now it's time to assign these cuties into the `changeLanguageAndActiveClass` function. You can reach this function in `constants/Functions.js`. 
+4. In the `changeLanguageAndActiveClass` function you have to add another `else if` condition with your `key` based on key-value pair you added in `SiteLanguages.js` before. Just copy the whole `else if` condition based on english text, and replace `.contains('engLanguage')` with your `key`. Next, replace `setLanguage` and `setSiteText` with brand new parameters while adding +1 for `setActiveClass`. Don't forget to pass these new parameters to function!
+5. We're almost ready! Go into `App.js`, and destructure your key-value pair from `SiteLanguages` with `key` on **line 13**. If you got it, head over to **line 85**, and add the key you just destructured into the `changeLanguageAndActiveClass` function as a parameter.
+6. Great! And finally, we can set up our new button in header. Go to `components/Header/Header.js`, and add a simple, yet functional string into `languageButtonTexts` array. This is going to be the text that appear on the new button in header (e.g ESP). That's it! The new button will be rendered immediately, and it will change the language of text on site when you click on it.

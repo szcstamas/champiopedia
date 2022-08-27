@@ -1,5 +1,5 @@
 export const SiteLanguages = {
 
-    hun: 'hu_HU',
-    eng: 'en_US',
+    huLanguage: 'hu_HU',
+    engLanguage: 'en_US',
 };
