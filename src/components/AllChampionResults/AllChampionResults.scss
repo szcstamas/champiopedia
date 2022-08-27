@@ -436,8 +436,8 @@
                     }
                 }
 
-                .minimapImgContainer {
-                    width: 100%;
+                div.minimapImgContainer {
+                    width: 100%!important;
                     border-right: none;
                     border-bottom: 1px solid $lightYellow;
                 }

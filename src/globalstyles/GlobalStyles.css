@@ -468,8 +468,8 @@
   .champContentContainer .latestChampAndMinimap .mapContainer .assembleAndMinimapContainer .assembleTeamContainer .assembleTeam {
     gap: 2rem;
   }
-  .champContentContainer .latestChampAndMinimap .mapContainer .minimapImgContainer {
-    width: 100%;
+  .champContentContainer .latestChampAndMinimap .mapContainer div.minimapImgContainer {
+    width: 100% !important;
     border-right: none;
     border-bottom: 1px solid #cdbe91;
   }
