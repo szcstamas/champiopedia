@@ -2116,7 +2116,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 2rem;
-  z-index: 100000000000000000000000000000000;
+  z-index: 100000000000002;
   position: absolute;
   height: 100vh;
   width: 100vw;
@@ -2162,7 +2162,7 @@ body {
   padding: 2rem;
   background: #cdbe91;
   border: 3px solid #020b18;
-  z-index: 99999999999999999999;
+  z-index: 100000000000001;
   line-height: 1.5rem;
 }
 
