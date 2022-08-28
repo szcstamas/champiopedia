@@ -9,8 +9,9 @@ import { SiteLanguages } from './constants/languages/SiteLanguages';
 import './globalstyles/GlobalStyles.css';
 import { LoaderImgs } from './constants/LoaderBg';
 
-//destructuring SiteLanguages
+//destructuring languages and functions
 const { huLanguage, engLanguage } = SiteLanguages;
+const { fetchLolApiVersion, fetchStartingData, changeLanguageAndActiveClass, getChampionByInputName, resetValue, switchLever, changeInputToChamp, sortChampionsByRole } = functions;
 
 //APP VARIABLE
 const App = () => {
@@ -19,32 +20,45 @@ const App = () => {
   let inputText = React.createRef();
   let champInput = document.querySelector('#input');
 
+  //for main API data
   const [oneChampData, setOneChampData] = useState([]);
   const [allChampData, setAllChampData] = useState([]);
 
+  //for latest champion data
   const [latestChampName, setLatestChampName] = useState([]);
   const [latestChampTitle, setLatestChampTitle] = useState([]);
   const [latestChampImage, setLatestChampImage] = useState('');
 
+  //for rendering unique roles in sort buttons
   const [uniqueRoles, setUniqueRoles] = useState([]);
 
+  //for img of one champion and display of data
   const [championImg, setChampionImg] = useState('');
   const [oneChampionDisplay, setOneChampionDisplay] = useState(false);
+
+  //for displaying boxes of all champions
   const [allChampionDisplay, setAllChampionDisplay] = useState(true);
+
+  //for language buttons in header
   const [languageButtonActiveClass, setActiveClass] = useState(2);
   const [sortButtonActiveClass, setSortButtonActiveClass] = useState('0');
 
+  //for displaying error when the champ name written in input field is incorrect or unknown
   const [inputErrorDisplay, setInputErrorDisplay] = useState(false);
 
+  //for display of loader when changing language
   const [loaderDisplay, setLoaderDisplay] = useState(false);
   const [loaderBgImgIndex, setLoaderBgImgIndex] = useState(0);
 
+  //for lever function which changes behaviour of champion-boxes when clicking on a lane icon on minimap
   const [lever, setLever] = useState(false);
 
+  //for using language and version variables in API url
   const [siteText, setSiteText] = useState(EnglishSiteText);
   const [version, setVersion] = useState('');
   const [language, setLanguage] = useState(engLanguage);
 
+  //for teamcomp-function
   const [champCompInfoText, setChampionCompRolesText] = useState(siteText.champCompDefaultText);
   const [championCompRolesColor, setChampionCompRolesColor] = useState('');
   const [championCompRolesIcon, setChampionCompRolesIcon] = useState("fa-solid fa-down-long");
@@ -52,14 +66,14 @@ const App = () => {
   //get the latest version of api
   useEffect(() => {
 
-    functions.fetchLolApiVersion(setVersion);
+    fetchLolApiVersion(setVersion);
 
   }, [])
 
   //rendering datas of all champions
   useEffect(() => {
 
-    functions.fetchStartingData(version, language, setLatestChampName, setLatestChampTitle, setLatestChampImage, setUniqueRoles, setAllChampData);
+    fetchStartingData(version, language, setLatestChampName, setLatestChampTitle, setLatestChampImage, setUniqueRoles, setAllChampData);
 
   },
     //data rendering by default and when these states changes
@@ -82,7 +96,7 @@ const App = () => {
       {/* Header of site */}
       <Header
         buttonLanguageClass={languageButtonActiveClass}
-        buttonLanguageFunction={(e) => functions.changeLanguageAndActiveClass(e, setLanguage, setActiveClass, setSiteText, huLanguage, engLanguage, HungarianSiteText, EnglishSiteText, inputText, version, language, setOneChampData, setChampionImg, setOneChampionDisplay, setAllChampionDisplay, setInputErrorDisplay, setChampionCompRolesText, setChampionCompRolesColor, setChampionCompRolesIcon, setLoaderDisplay, LoaderImgs, setLoaderBgImgIndex)}
+        buttonLanguageFunction={(e) => changeLanguageAndActiveClass(e, setLanguage, setActiveClass, setSiteText, huLanguage, engLanguage, HungarianSiteText, EnglishSiteText, inputText, version, language, setOneChampData, setChampionImg, setOneChampionDisplay, setAllChampionDisplay, setInputErrorDisplay, setChampionCompRolesText, setChampionCompRolesColor, setChampionCompRolesIcon, setLoaderDisplay, LoaderImgs, setLoaderBgImgIndex)}
       />
 
       {/* Go to top button */}
@@ -91,14 +105,14 @@ const App = () => {
       {/* H1 and search input */}
       <SiteNameAndInput
         mainContainerText={siteText}
-        getFunction={() => functions.getChampionByInputName(version, inputText, language, setOneChampData, setChampionImg, setOneChampionDisplay, setAllChampionDisplay, setInputErrorDisplay)}
-        resetFunction={() => functions.resetValue(champInput, version, inputText, language, setOneChampData, setChampionImg, setOneChampionDisplay, setAllChampionDisplay, setInputErrorDisplay, setChampionCompRolesText, setChampionCompRolesColor, setChampionCompRolesIcon)}
+        getFunction={() => getChampionByInputName(version, inputText, language, setOneChampData, setChampionImg, setOneChampionDisplay, setAllChampionDisplay, setInputErrorDisplay)}
+        resetFunction={() => resetValue(champInput, version, inputText, language, setOneChampData, setChampionImg, setOneChampionDisplay, setAllChampionDisplay, setInputErrorDisplay, setChampionCompRolesText, setChampionCompRolesColor, setChampionCompRolesIcon)}
         refValue={inputText}
         inputErrorText={siteText.inputError}
         inputErrorDisplay={inputErrorDisplay}
       />
 
-      {/* Latest champion, minimap, sorting buttons and 'all champ' buttons */}
+      {/* Latest champion, minimap, sorting buttons and "all champ" buttons */}
       <AllChampionResults
         allChampionDisplay={allChampionDisplay}
         containerText={siteText}
@@ -108,13 +122,13 @@ const App = () => {
         champCompInfoText={champCompInfoText}
         championCompRolesColor={championCompRolesColor}
         championCompRolesIcon={championCompRolesIcon}
-        leverFunction={(e) => functions.switchLever(e, setSortButtonActiveClass, lever, setLever)}
+        leverFunction={(e) => switchLever(e, setSortButtonActiveClass, lever, setLever)}
         sortButtonClass={sortButtonActiveClass}
-        changeFunction={(e) => functions.changeInputToChamp(e, version, lever, champInput, inputText, language, setSortButtonActiveClass, setOneChampData, setLever, setChampionImg, setOneChampionDisplay, setAllChampionDisplay, setInputErrorDisplay, setChampionCompRolesText, setChampionCompRolesColor, setChampionCompRolesIcon)}
+        changeFunction={(e) => changeInputToChamp(e, version, lever, champInput, inputText, language, setSortButtonActiveClass, setOneChampData, setLever, setChampionImg, setOneChampionDisplay, setAllChampionDisplay, setInputErrorDisplay, setChampionCompRolesText, setChampionCompRolesColor, setChampionCompRolesIcon)}
         allChampsData={allChampData}
         uniqueRoleArray={uniqueRoles}
         uniqueRoleIcons={UniqueRoleImages}
-        sortChampFunction={(e) => functions.sortChampionsByRole(e)}
+        sortChampFunction={(e) => sortChampionsByRole(e)}
       />
 
       {/* Data of one champion after request 200 */}
@@ -132,7 +146,7 @@ const App = () => {
         skillsText={siteText.skillsText}
         skillsCd={siteText.skillsCd}
         costText={siteText.costText}
-        getValue={() => functions.getChampionByInputName(version, inputText, language, setOneChampData, setChampionImg, setOneChampionDisplay, setAllChampionDisplay, setInputErrorDisplay, setChampionCompRolesText, setChampionCompRolesColor, setChampionCompRolesIcon)}
+        getValue={() => getChampionByInputName(version, inputText, language, setOneChampData, setChampionImg, setOneChampionDisplay, setAllChampionDisplay, setInputErrorDisplay, setChampionCompRolesText, setChampionCompRolesColor, setChampionCompRolesIcon)}
       />
 
       {/* Footer of site */}
