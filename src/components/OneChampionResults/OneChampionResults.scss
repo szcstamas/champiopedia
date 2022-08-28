@@ -409,8 +409,16 @@
             margin-top: 2rem;
 
             .header {
-                order: -1;
+                order: -3;
                 padding: 2rem 1.5rem 6rem 1.5rem!important;
+            }
+
+            .role {
+                order: -2;
+            }
+
+            .lore {
+                order: -1;
             }
 
             .flexItem {
