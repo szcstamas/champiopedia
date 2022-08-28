@@ -2133,6 +2133,7 @@ body {
   text-align: center;
   background: #cdbe91;
   color: #272727;
+  background-position: center;
 }
 
 .language-loader i {
